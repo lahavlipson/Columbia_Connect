@@ -18,7 +18,6 @@
 		CDB361DA1F09CA1100E43351 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361D91F09CA1100E43351 /* GreetingViewController.swift */; };
 		CDB361DC1F0A8FFE00E43351 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361DB1F0A8FFE00E43351 /* PickerView.swift */; };
 		CDB361DE1F0AA68C00E43351 /* StudentTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */; };
-		CDB361E01F0AC63C00E43351 /* UniLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361DF1F0AC63C00E43351 /* UniLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +55,6 @@
 		CDB361D91F09CA1100E43351 /* GreetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		CDB361DB1F0A8FFE00E43351 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTypeViewController.swift; sourceTree = "<group>"; };
-		CDB361DF1F0AC63C00E43351 /* UniLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +109,6 @@
 				CDB361AB1F09C41D00E43351 /* FirstViewController.swift */,
 				CDB361AD1F09C41D00E43351 /* SecondViewController.swift */,
 				CDB361AF1F09C41D00E43351 /* Main.storyboard */,
-				CDB361DF1F0AC63C00E43351 /* UniLoginViewController.swift */,
 				CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */,
 				CDB361D91F09CA1100E43351 /* GreetingViewController.swift */,
 				CDB361DB1F0A8FFE00E43351 /* PickerView.swift */,
@@ -282,7 +279,6 @@
 				CDB361DE1F0AA68C00E43351 /* StudentTypeViewController.swift in Sources */,
 				CDB361AC1F09C41D00E43351 /* FirstViewController.swift in Sources */,
 				CDB361DC1F0A8FFE00E43351 /* PickerView.swift in Sources */,
-				CDB361E01F0AC63C00E43351 /* UniLoginViewController.swift in Sources */,
 				CDB361DA1F09CA1100E43351 /* GreetingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

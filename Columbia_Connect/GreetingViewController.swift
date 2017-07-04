@@ -26,7 +26,9 @@ class GreetingViewController: UIViewController, UITextFieldDelegate {
             if !uniIsValid {
                 errorLabel.text = "The uni is invalid"
             } else {
-                if enteredPassword.rangeOfCharacter(from: CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZ")) == nil {
+                if enteredPassword.characters.count < 8 {
+                    errorLabel.text = "Password must contain 8+ characters"
+                } else if enteredPassword.rangeOfCharacter(from: CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZ")) == nil{
                     errorLabel.text = "Password must contain a capital and lowercase letter"
                 } else if enteredPassword.rangeOfCharacter(from: CharacterSet(charactersIn: "1234567890")) == nil{
                     errorLabel.text = "Password must contain at least one number"
@@ -35,7 +37,7 @@ class GreetingViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         } else {
-            errorLabel.text = "An error occured when trying to verify the uni"
+            errorLabel.text = "An error occured when trying to connect"
         }
     }
     
@@ -80,14 +82,7 @@ class GreetingViewController: UIViewController, UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        print(textField.tag)
-//
-//        if textField.tag == 1{
-//            let nextResponder=textField.superview?.viewWithTag(2) as UIResponder!
-//            nextResponder?.becomeFirstResponder()
-//        } else{
-            textField.resignFirstResponder()
-        //}
+        textField.resignFirstResponder()
         return false
     }
     
