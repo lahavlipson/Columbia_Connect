@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F84C56441833EA4F9F110E0 /* Pods_Columbia_Connect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF7931FDFD2DEDD67D7128 /* Pods_Columbia_Connect.framework */; };
 		CDB361AA1F09C41D00E43351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361A91F09C41D00E43351 /* AppDelegate.swift */; };
 		CDB361AC1F09C41D00E43351 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361AB1F09C41D00E43351 /* FirstViewController.swift */; };
 		CDB361AE1F09C41D00E43351 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361AD1F09C41D00E43351 /* SecondViewController.swift */; };
@@ -18,6 +19,7 @@
 		CDB361DA1F09CA1100E43351 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361D91F09CA1100E43351 /* GreetingViewController.swift */; };
 		CDB361DC1F0A8FFE00E43351 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361DB1F0A8FFE00E43351 /* PickerView.swift */; };
 		CDB361DE1F0AA68C00E43351 /* StudentTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */; };
+		CDB361E31F0D4DC200E43351 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361E21F0D4DC200E43351 /* RecommendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47EF7931FDFD2DEDD67D7128 /* Pods_Columbia_Connect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Columbia_Connect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F1F145C215BCF414D56BD7A /* Pods-Columbia_Connect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Columbia_Connect.release.xcconfig"; path = "Pods/Target Support Files/Pods-Columbia_Connect/Pods-Columbia_Connect.release.xcconfig"; sourceTree = "<group>"; };
+		A4E7ECA636DC7CC1BCA09414 /* Pods-Columbia_Connect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Columbia_Connect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Columbia_Connect/Pods-Columbia_Connect.debug.xcconfig"; sourceTree = "<group>"; };
 		CDB361A61F09C41D00E43351 /* Columbia_Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Columbia_Connect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB361A91F09C41D00E43351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDB361AB1F09C41D00E43351 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +60,8 @@
 		CDB361D91F09CA1100E43351 /* GreetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		CDB361DB1F0A8FFE00E43351 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTypeViewController.swift; sourceTree = "<group>"; };
+		CDB361E11F0D498A00E43351 /* Columbia_Connect_Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Columbia_Connect_Bridging-Header.h"; sourceTree = "<group>"; };
+		CDB361E21F0D4DC200E43351 /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F84C56441833EA4F9F110E0 /* Pods_Columbia_Connect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44825CA975B1D194876AB423 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47EF7931FDFD2DEDD67D7128 /* Pods_Columbia_Connect.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E5349F2512F61F5069BA645 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4E7ECA636DC7CC1BCA09414 /* Pods-Columbia_Connect.debug.xcconfig */,
+				6F1F145C215BCF414D56BD7A /* Pods-Columbia_Connect.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CDB3619D1F09C41D00E43351 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +114,8 @@
 				CDB361BF1F09C41E00E43351 /* Columbia_ConnectTests */,
 				CDB361CA1F09C41E00E43351 /* Columbia_ConnectUITests */,
 				CDB361A71F09C41D00E43351 /* Products */,
+				9E5349F2512F61F5069BA645 /* Pods */,
+				44825CA975B1D194876AB423 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +136,8 @@
 				CDB361AB1F09C41D00E43351 /* FirstViewController.swift */,
 				CDB361AD1F09C41D00E43351 /* SecondViewController.swift */,
 				CDB361AF1F09C41D00E43351 /* Main.storyboard */,
+				CDB361E21F0D4DC200E43351 /* RecommendViewController.swift */,
+				CDB361E11F0D498A00E43351 /* Columbia_Connect_Bridging-Header.h */,
 				CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */,
 				CDB361D91F09CA1100E43351 /* GreetingViewController.swift */,
 				CDB361DB1F0A8FFE00E43351 /* PickerView.swift */,
@@ -144,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDB361D01F09C41E00E43351 /* Build configuration list for PBXNativeTarget "Columbia_Connect" */;
 			buildPhases = (
+				154AE92E51F8AE8FD530A0D6 /* [CP] Check Pods Manifest.lock */,
 				CDB361A21F09C41D00E43351 /* Sources */,
 				CDB361A31F09C41D00E43351 /* Frameworks */,
 				CDB361A41F09C41D00E43351 /* Resources */,
+				D14056CA5F894D5DCE32B326 /* [CP] Embed Pods Frameworks */,
+				C9416E8F556EB6063666EC34 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +301,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		154AE92E51F8AE8FD530A0D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C9416E8F556EB6063666EC34 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Columbia_Connect/Pods-Columbia_Connect-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D14056CA5F894D5DCE32B326 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Columbia_Connect/Pods-Columbia_Connect-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CDB361A21F09C41D00E43351 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,6 +356,7 @@
 			files = (
 				CDB361AE1F09C41D00E43351 /* SecondViewController.swift in Sources */,
 				CDB361AA1F09C41D00E43351 /* AppDelegate.swift in Sources */,
+				CDB361E31F0D4DC200E43351 /* RecommendViewController.swift in Sources */,
 				CDB361DE1F0AA68C00E43351 /* StudentTypeViewController.swift in Sources */,
 				CDB361AC1F09C41D00E43351 /* FirstViewController.swift in Sources */,
 				CDB361DC1F0A8FFE00E43351 /* PickerView.swift in Sources */,
@@ -429,6 +510,7 @@
 		};
 		CDB361D11F09C41E00E43351 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4E7ECA636DC7CC1BCA09414 /* Pods-Columbia_Connect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SBGX5Q9V65;
@@ -436,12 +518,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lahav-Lipson.Columbia-Connect";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Columbia_Connect/Columbia_Connect_Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Debug;
 		};
 		CDB361D21F09C41E00E43351 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F1F145C215BCF414D56BD7A /* Pods-Columbia_Connect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SBGX5Q9V65;
@@ -449,7 +534,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lahav-Lipson.Columbia-Connect";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Columbia_Connect/Columbia_Connect_Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Release;
 		};
@@ -530,6 +617,7 @@
 				CDB361D21F09C41E00E43351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CDB361D31F09C41E00E43351 /* Build configuration list for PBXNativeTarget "Columbia_ConnectTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +626,7 @@
 				CDB361D51F09C41E00E43351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CDB361D61F09C41E00E43351 /* Build configuration list for PBXNativeTarget "Columbia_ConnectUITests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +635,7 @@
 				CDB361D81F09C41E00E43351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

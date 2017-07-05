@@ -24,7 +24,6 @@ class StudentTypeViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: true) { 
-            //
         }
     }
 
