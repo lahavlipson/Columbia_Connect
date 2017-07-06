@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,39 +17,84 @@
             <rect key="frame" x="0.0" y="0.0" width="382" height="345"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lahav Lipson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPS-Ci-lgc">
-                    <rect key="frame" x="0.0" y="90" width="382" height="42"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="35"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Studying Computer Science" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nol-4Q-3UY">
-                    <rect key="frame" x="0.0" y="140" width="382" height="26"/>
+                    <rect key="frame" x="0.0" y="116.5" width="382" height="26"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class of 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74P-Br-9LI">
-                    <rect key="frame" x="0.5" y="174" width="382" height="26"/>
+                    <rect key="frame" x="0.5" y="150.5" width="382" height="26"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5d-GD-qCF">
+                    <rect key="frame" x="30" y="10" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="D9G-lS-c27"/>
+                        <constraint firstAttribute="width" secondItem="V5d-GD-qCF" secondAttribute="height" multiplier="1:1" id="rEk-OG-JcA"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="Message_btn"/>
+                    <connections>
+                        <action selector="messageButtonPressed:" destination="-1" eventType="touchUpInside" id="b58-qv-38a"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yig-nO-2ab">
+                    <rect key="frame" x="292" y="10" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Yig-nO-2ab" secondAttribute="height" multiplier="1:1" id="DAc-FC-ywQ"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="Favorite_btn"/>
+                    <connections>
+                        <action selector="favoriteButtonPressed:" destination="-1" eventType="touchUpInside" id="SDH-Vg-aQ7"/>
+                        <action selector="messageButtonPressed:" destination="-1" eventType="touchUpInside" id="cLP-cQ-zbh"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUm-gq-HcJ" userLabel="ProfilePlaceHolder">
+                    <rect key="frame" x="114.5" y="0.0" width="153" height="76.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fUm-gq-HcJ" secondAttribute="height" multiplier="2:1" id="YsY-Fy-cqP"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lahav Lipson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPS-Ci-lgc">
+                    <rect key="frame" x="0.0" y="80.5" width="382" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="DbG-ab-HCR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="35"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.83529411764705885" green="0.87450980392156863" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="Nol-4Q-3UY" firstAttribute="top" secondItem="zPS-Ci-lgc" secondAttribute="bottom" constant="8" id="3to-WK-qXd"/>
-                <constraint firstItem="zPS-Ci-lgc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="90" id="5Gd-WN-YtZ"/>
+                <constraint firstItem="fUm-gq-HcJ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.4" id="1Wf-RZ-VXB"/>
+                <constraint firstAttribute="trailing" secondItem="Yig-nO-2ab" secondAttribute="trailing" constant="30" id="3cj-Bp-mQK"/>
+                <constraint firstItem="Nol-4Q-3UY" firstAttribute="top" secondItem="zPS-Ci-lgc" secondAttribute="bottom" constant="4" id="3to-WK-qXd"/>
                 <constraint firstItem="74P-Br-9LI" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="9ZA-0L-8yY"/>
                 <constraint firstItem="zPS-Ci-lgc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BnP-hA-aCc"/>
+                <constraint firstItem="fUm-gq-HcJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="H1D-ZC-VIw"/>
+                <constraint firstItem="Yig-nO-2ab" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Q8w-zU-fvm"/>
+                <constraint firstItem="fUm-gq-HcJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TfB-8B-NNc"/>
                 <constraint firstItem="74P-Br-9LI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="W93-IZ-kTh"/>
+                <constraint firstItem="Yig-nO-2ab" firstAttribute="width" secondItem="Yig-nO-2ab" secondAttribute="height" multiplier="1:1" id="XUh-bm-nXf"/>
                 <constraint firstItem="zPS-Ci-lgc" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="ZNW-RF-m8M"/>
+                <constraint firstItem="V5d-GD-qCF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="b9x-4w-wy5"/>
+                <constraint firstItem="Yig-nO-2ab" firstAttribute="width" secondItem="V5d-GD-qCF" secondAttribute="width" id="bN1-LJ-bkE"/>
                 <constraint firstItem="Nol-4Q-3UY" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="cOx-s7-KLN"/>
                 <constraint firstItem="Nol-4Q-3UY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kOv-oJ-khJ"/>
                 <constraint firstItem="74P-Br-9LI" firstAttribute="top" secondItem="Nol-4Q-3UY" secondAttribute="bottom" constant="8" id="lvh-O9-Fyq"/>
+                <constraint firstItem="zPS-Ci-lgc" firstAttribute="top" secondItem="fUm-gq-HcJ" secondAttribute="bottom" constant="4" id="vrU-Kf-iNo"/>
+                <constraint firstItem="V5d-GD-qCF" firstAttribute="top" secondItem="Yig-nO-2ab" secondAttribute="top" id="y8z-3h-Myn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="15" y="-187.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="Favorite_btn" width="45" height="45"/>
+        <image name="Message_btn" width="45" height="45"/>
+    </resources>
 </document>

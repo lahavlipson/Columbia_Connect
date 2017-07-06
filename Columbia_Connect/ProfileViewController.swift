@@ -44,6 +44,12 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         let v = ProfileFirstPage.instanceFromNib()
         v.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: mainScrollView.frame.height)
         mainScrollView.addSubview(v)
+        v.translatesAutoresizingMaskIntoConstraints = false
+        let c1 = NSLayoutConstraint(item: v, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: mainScrollView, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
+        let c2 = NSLayoutConstraint(item: v, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: mainScrollView, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
+        let c3 = NSLayoutConstraint(item: v, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: mainScrollView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+        let c4 = NSLayoutConstraint(item: v, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: mainScrollView, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
+        self.view.addConstraints([c1,c2,c3,c4])
         
         let w = UIView()
         w.backgroundColor = .blue

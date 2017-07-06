@@ -13,6 +13,12 @@ class ProfileFirstPage: UIView {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBAction func messageButtonPressed(_ sender: Any) {
+    }
+    
+    @IBAction func favoriteButtonPressed(_ sender: Any) {
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
