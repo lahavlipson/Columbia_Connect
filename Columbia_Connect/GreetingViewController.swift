@@ -44,6 +44,11 @@ class GreetingViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //WILL REMOVE
+        passwordTextField.text = "1Aaaaaaa"
+        uniTextField.text = "lol2107"
+        //WILL REMOVE
+        
         errorLabel.text = ""
         
         connectLabel.addTextSpacing(val: 3)

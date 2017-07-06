@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -265,23 +266,90 @@
             </objects>
             <point key="canvasLocation" x="-1458" y="707"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="66u-hO-VEu">
             <objects>
-                <viewController id="xme-VZ-U0J" sceneMemberID="viewController">
+                <viewController id="xme-VZ-U0J" customClass="ProfileViewController" customModule="Columbia_Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mWT-BV-I3M"/>
                         <viewControllerLayoutGuide type="bottom" id="9XJ-XW-wgV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cR9-0E-Cye">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="cR9-0E-Cye">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cu_background3" translatesAutoresizingMaskIntoConstraints="NO" id="3el-bD-Im8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="FLH-RW-5ZU"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RW-Bb-31X">
+                                <rect key="frame" x="0.0" y="184" width="375" height="259"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXY-Ff-crR">
+                                <rect key="frame" x="112" y="107" width="150" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lahav" translatesAutoresizingMaskIntoConstraints="NO" id="TKN-PT-Ze2">
+                                        <rect key="frame" x="4" y="4" width="142" height="142"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="TKN-PT-Ze2" secondAttribute="height" multiplier="1:1" id="WxL-fT-fEe"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yXY-Ff-crR" secondAttribute="height" multiplier="1:1" id="HNs-cL-itd"/>
+                                    <constraint firstItem="TKN-PT-Ze2" firstAttribute="centerX" secondItem="yXY-Ff-crR" secondAttribute="centerX" id="YuD-Nc-aUt"/>
+                                    <constraint firstItem="TKN-PT-Ze2" firstAttribute="centerY" secondItem="yXY-Ff-crR" secondAttribute="centerY" id="dQX-Za-yV3"/>
+                                    <constraint firstItem="TKN-PT-Ze2" firstAttribute="top" secondItem="yXY-Ff-crR" secondAttribute="top" constant="4" id="jBi-Ts-q2n"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSz-Ga-tPS" customClass="BetterSegmentedControl" customModule="Columbia_Connect" customModuleProvider="target">
+                                <rect key="frame" x="33" y="422" width="309" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ALi-lc-bQg"/>
+                                </constraints>
+                            </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="6gD-m9-pPM">
+                                <rect key="frame" x="167.5" y="400" width="40" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="bx6-6p-vps"/>
+                                    <constraint firstAttribute="height" constant="20" id="r35-ud-T3k"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" red="0.60258613910000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="iSz-Ga-tPS" secondAttribute="trailing" constant="17" id="4rS-aA-wcx"/>
+                            <constraint firstItem="iSz-Ga-tPS" firstAttribute="top" secondItem="6gD-m9-pPM" secondAttribute="bottom" constant="2" id="AhU-rY-ltr"/>
+                            <constraint firstItem="5RW-Bb-31X" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="FIN-Fn-psr"/>
+                            <constraint firstItem="9XJ-XW-wgV" firstAttribute="top" secondItem="5RW-Bb-31X" secondAttribute="bottom" constant="175" id="Ga2-iN-6aX"/>
+                            <constraint firstItem="3el-bD-Im8" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" id="OHB-GQ-Yhn"/>
+                            <constraint firstItem="5RW-Bb-31X" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" id="Q3r-AQ-ZT6"/>
+                            <constraint firstItem="iSz-Ga-tPS" firstAttribute="bottom" secondItem="5RW-Bb-31X" secondAttribute="bottom" constant="19" id="QoG-Id-2Zf"/>
+                            <constraint firstItem="3el-bD-Im8" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="ZFs-Yr-z5d"/>
+                            <constraint firstItem="6gD-m9-pPM" firstAttribute="centerX" secondItem="5RW-Bb-31X" secondAttribute="centerX" id="a1r-lW-Jl6"/>
+                            <constraint firstItem="yXY-Ff-crR" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" multiplier="0.4" id="cCx-P8-jLW"/>
+                            <constraint firstItem="iSz-Ga-tPS" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="cJ0-w1-XYZ"/>
+                            <constraint firstItem="yXY-Ff-crR" firstAttribute="top" secondItem="mWT-BV-I3M" secondAttribute="bottom" constant="43" id="gfZ-a1-V6s"/>
+                            <constraint firstItem="3el-bD-Im8" firstAttribute="top" secondItem="mWT-BV-I3M" secondAttribute="bottom" id="lLR-hQ-gv2"/>
+                            <constraint firstItem="5RW-Bb-31X" firstAttribute="top" secondItem="3el-bD-Im8" secondAttribute="bottom" id="r6Y-gs-GdE"/>
+                            <constraint firstItem="yXY-Ff-crR" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="zcs-HW-AUG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainScrollView" destination="5RW-Bb-31X" id="Cml-mN-tI1"/>
+                        <outlet property="pageControl" destination="6gD-m9-pPM" id="V2Z-Fu-S3V"/>
+                        <outlet property="profileImageView" destination="TKN-PT-Ze2" id="9QU-ja-WcW"/>
+                        <outlet property="profilePictureView" destination="yXY-Ff-crR" id="V4t-nG-hsM"/>
+                        <outlet property="segmentedControl" destination="iSz-Ga-tPS" id="GnA-52-gZl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ig4-dJ-IVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1458" y="1427"/>
+            <point key="canvasLocation" x="-1458.4000000000001" y="1426.2368815592206"/>
         </scene>
         <!--Student Type View Controller-->
         <scene sceneID="mBw-KF-JeO">
@@ -405,9 +473,11 @@
     <resources>
         <image name="back_arrow" width="25" height="25"/>
         <image name="cu_background" width="320" height="568"/>
+        <image name="cu_background3" width="320" height="116"/>
         <image name="cu_crown" width="203" height="161"/>
         <image name="first" width="30" height="30"/>
         <image name="grey_rectangle" width="276" height="96"/>
+        <image name="lahav" width="170" height="166"/>
         <image name="lock_icon" width="19" height="25"/>
         <image name="login button" width="198" height="40"/>
         <image name="next button" width="198" height="40"/>

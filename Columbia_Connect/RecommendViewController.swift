@@ -35,9 +35,8 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
-        let view = UIView()
-        view.frame.size = CGSize(width: 250, height: 250)
-        view.backgroundColor = UIColor.red
+        let view = RecommendUserView()
+        view.frame.size = CGSize(width: self.view.frame.width-100, height: self.view.frame.height-200)
         let panGestureRecognizer = MyPanRecognizer(target: self, action:#selector(self.handlePan(panGesture:)))
         panGestureRecognizer.onsetView = view
         panGestureRecognizer.delegate = self
