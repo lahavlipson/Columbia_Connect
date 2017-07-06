@@ -27,7 +27,8 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
         carousel.dataSource = self
         carousel.delegate = self
         
-        // Do any additional setup after loading the view.
+        
+        
     }
     
     func numberOfItems(in carousel: iCarousel) -> Int {
@@ -36,11 +37,22 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         let view = RecommendUserView()
-        view.frame.size = CGSize(width: self.view.frame.width-100, height: self.view.frame.height-200)
+        view.layer.cornerRadius = 10
+        view.frame.size = CGSize(width: self.view.frame.width-30, height: self.view.frame.height-200)
         let panGestureRecognizer = MyPanRecognizer(target: self, action:#selector(self.handlePan(panGesture:)))
         panGestureRecognizer.onsetView = view
         panGestureRecognizer.delegate = self
         view.addGestureRecognizer(panGestureRecognizer)
+        
+        
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSize(width: 0, height: 3)
+        view.layer.shadowRadius = 3
+        
+        
+        
+        
         return view
     }
     
@@ -88,7 +100,6 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
         }
     }
     
-
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         let recognizer = gestureRecognizer as! MyPanRecognizer
         let translation = recognizer.translation(in: recognizer.onsetView)

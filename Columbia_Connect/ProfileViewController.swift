@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +41,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         
         pageControl.pageIndicatorTintColor = UIColor(hex: 0xA7B6C6)
         
-        let v = ProfileFirstPage()
+        let v = ProfileFirstPage.instanceFromNib()
         v.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: mainScrollView.frame.height)
         mainScrollView.addSubview(v)
         

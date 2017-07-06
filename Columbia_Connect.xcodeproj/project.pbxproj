@@ -14,6 +14,7 @@
 		CD7B17571F0DD62D0008EE79 /* ProfileFirstPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B17561F0DD62D0008EE79 /* ProfileFirstPage.swift */; };
 		CD7B17591F0DE7DE0008EE79 /* RecommendUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7B17581F0DE7DE0008EE79 /* RecommendUserView.xib */; };
 		CD7B175B1F0DE7F80008EE79 /* RecommendUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B175A1F0DE7F80008EE79 /* RecommendUserView.swift */; };
+		CD7B175D1F0E85320008EE79 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B175C1F0E85320008EE79 /* SVGPath.swift */; };
 		CDB361AA1F09C41D00E43351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361A91F09C41D00E43351 /* AppDelegate.swift */; };
 		CDB361AC1F09C41D00E43351 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361AB1F09C41D00E43351 /* FirstViewController.swift */; };
 		CDB361AE1F09C41D00E43351 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361AD1F09C41D00E43351 /* SecondViewController.swift */; };
@@ -53,7 +54,8 @@
 		CD7B17541F0DD5E30008EE79 /* ProfileFirstPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileFirstPage.xib; sourceTree = "<group>"; };
 		CD7B17561F0DD62D0008EE79 /* ProfileFirstPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFirstPage.swift; sourceTree = "<group>"; };
 		CD7B17581F0DE7DE0008EE79 /* RecommendUserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendUserView.xib; sourceTree = "<group>"; };
-		CD7B175A1F0DE7F80008EE79 /* RecommendUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendUserView.swift; sourceTree = "<group>"; };
+		CD7B175A1F0DE7F80008EE79 /* RecommendUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = RecommendUserView.swift; sourceTree = "<group>"; };
+		CD7B175C1F0E85320008EE79 /* SVGPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGPath.swift; sourceTree = "<group>"; };
 		CDB361A61F09C41D00E43351 /* Columbia_Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Columbia_Connect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB361A91F09C41D00E43351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDB361AB1F09C41D00E43351 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				CDB361A91F09C41D00E43351 /* AppDelegate.swift */,
 				CD7B17501F0DB6A30008EE79 /* BetterSegmentedControl.swift */,
+				CD7B175C1F0E85320008EE79 /* SVGPath.swift */,
 				CDB361AB1F09C41D00E43351 /* FirstViewController.swift */,
 				CDB361AD1F09C41D00E43351 /* SecondViewController.swift */,
 				CDB361AF1F09C41D00E43351 /* Main.storyboard */,
@@ -373,6 +376,7 @@
 			files = (
 				CDB361AE1F09C41D00E43351 /* SecondViewController.swift in Sources */,
 				CDB361AA1F09C41D00E43351 /* AppDelegate.swift in Sources */,
+				CD7B175D1F0E85320008EE79 /* SVGPath.swift in Sources */,
 				CD7B17511F0DB6A30008EE79 /* BetterSegmentedControl.swift in Sources */,
 				CDB361E31F0D4DC200E43351 /* RecommendViewController.swift in Sources */,
 				CD7B175B1F0DE7F80008EE79 /* RecommendUserView.swift in Sources */,

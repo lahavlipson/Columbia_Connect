@@ -11,6 +11,7 @@ import UIKit
 
 class ProfileFirstPage: UIView {
     
+    @IBOutlet weak var nameLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,9 +26,14 @@ class ProfileFirstPage: UIView {
     }
     
     func setup(){
-        self.backgroundColor = UIColor(colorLiteralRed: 213/255, green: 223/255, blue: 235/255, alpha: 1)
+        //nameLabel.addTextSpacing(val: 4)
     }
     
-    
+    class func instanceFromNib() -> ProfileFirstPage {
+        let v = UINib(nibName: "ProfileFirstPage", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! ProfileFirstPage
+        v.frame.origin = CGPoint(x: 0, y: 0)
+        
+        return v
+    }
     
 }
