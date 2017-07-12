@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -291,16 +292,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cu_background3" translatesAutoresizingMaskIntoConstraints="NO" id="3el-bD-Im8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="FLH-RW-5ZU"/>
+                                    <constraint firstAttribute="height" constant="150" id="FLH-RW-5ZU"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RW-Bb-31X">
-                                <rect key="frame" x="0.0" y="184" width="375" height="259"/>
+                                <rect key="frame" x="0.0" y="150" width="375" height="293"/>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="6gD-m9-pPM">
+                                <rect key="frame" x="167.5" y="402" width="40" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="bx6-6p-vps"/>
+                                    <constraint firstAttribute="height" constant="20" id="r35-ud-T3k"/>
+                                </constraints>
+                            </pageControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXY-Ff-crR">
-                                <rect key="frame" x="112" y="107" width="150" height="150"/>
+                                <rect key="frame" x="112" y="75" width="150" height="150"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lahav" translatesAutoresizingMaskIntoConstraints="NO" id="TKN-PT-Ze2">
                                         <rect key="frame" x="4" y="4" width="142" height="142"/>
@@ -317,36 +325,37 @@
                                     <constraint firstItem="TKN-PT-Ze2" firstAttribute="top" secondItem="yXY-Ff-crR" secondAttribute="top" constant="4" id="jBi-Ts-q2n"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3R6-lw-x8P">
+                                <rect key="frame" x="0.5" y="444" width="375" height="174"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSz-Ga-tPS" customClass="BetterSegmentedControl" customModule="Columbia_Connect" customModuleProvider="target">
-                                <rect key="frame" x="33" y="422" width="309" height="40"/>
+                                <rect key="frame" x="33" y="424" width="309" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ALi-lc-bQg"/>
                                 </constraints>
                             </view>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="6gD-m9-pPM">
-                                <rect key="frame" x="167.5" y="400" width="40" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="bx6-6p-vps"/>
-                                    <constraint firstAttribute="height" constant="20" id="r35-ud-T3k"/>
-                                </constraints>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.60258613910000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="3R6-lw-x8P" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="0Lb-Ag-OcR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iSz-Ga-tPS" secondAttribute="trailing" constant="17" id="4rS-aA-wcx"/>
+                            <constraint firstItem="yXY-Ff-crR" firstAttribute="centerY" secondItem="5RW-Bb-31X" secondAttribute="top" id="8gC-V8-dFR"/>
                             <constraint firstItem="iSz-Ga-tPS" firstAttribute="top" secondItem="6gD-m9-pPM" secondAttribute="bottom" constant="2" id="AhU-rY-ltr"/>
                             <constraint firstItem="5RW-Bb-31X" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="FIN-Fn-psr"/>
                             <constraint firstItem="9XJ-XW-wgV" firstAttribute="top" secondItem="5RW-Bb-31X" secondAttribute="bottom" constant="175" id="Ga2-iN-6aX"/>
+                            <constraint firstItem="3R6-lw-x8P" firstAttribute="top" secondItem="iSz-Ga-tPS" secondAttribute="centerY" id="Ifw-vw-o57"/>
                             <constraint firstItem="3el-bD-Im8" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" id="OHB-GQ-Yhn"/>
+                            <constraint firstItem="3R6-lw-x8P" firstAttribute="top" secondItem="mWT-BV-I3M" secondAttribute="bottom" constant="380" id="OJf-8B-GWC"/>
                             <constraint firstItem="5RW-Bb-31X" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" id="Q3r-AQ-ZT6"/>
-                            <constraint firstItem="iSz-Ga-tPS" firstAttribute="bottom" secondItem="5RW-Bb-31X" secondAttribute="bottom" constant="19" id="QoG-Id-2Zf"/>
                             <constraint firstItem="3el-bD-Im8" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="ZFs-Yr-z5d"/>
                             <constraint firstItem="6gD-m9-pPM" firstAttribute="centerX" secondItem="5RW-Bb-31X" secondAttribute="centerX" id="a1r-lW-Jl6"/>
                             <constraint firstItem="yXY-Ff-crR" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" multiplier="0.4" id="cCx-P8-jLW"/>
                             <constraint firstItem="iSz-Ga-tPS" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="cJ0-w1-XYZ"/>
-                            <constraint firstItem="yXY-Ff-crR" firstAttribute="top" secondItem="mWT-BV-I3M" secondAttribute="bottom" constant="43" id="gfZ-a1-V6s"/>
-                            <constraint firstItem="3el-bD-Im8" firstAttribute="top" secondItem="mWT-BV-I3M" secondAttribute="bottom" id="lLR-hQ-gv2"/>
+                            <constraint firstItem="3el-bD-Im8" firstAttribute="top" secondItem="mWT-BV-I3M" secondAttribute="bottom" constant="-64" id="lLR-hQ-gv2"/>
+                            <constraint firstItem="3R6-lw-x8P" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" id="pki-YK-Sto"/>
+                            <constraint firstItem="9XJ-XW-wgV" firstAttribute="top" secondItem="3R6-lw-x8P" secondAttribute="bottom" id="qZS-7c-k1J"/>
                             <constraint firstItem="5RW-Bb-31X" firstAttribute="top" secondItem="3el-bD-Im8" secondAttribute="bottom" id="r6Y-gs-GdE"/>
                             <constraint firstItem="yXY-Ff-crR" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="zcs-HW-AUG"/>
                         </constraints>
@@ -539,7 +548,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="el5-db-CG5" id="eFL-p5-cG7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

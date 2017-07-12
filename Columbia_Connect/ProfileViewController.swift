@@ -24,7 +24,10 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         segmentedControl.titles = ["Profile","Classes"]
         
         segmentedControl.backgroundColor = UIColor(white: 0.85, alpha: 1)
@@ -71,12 +74,14 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.x == 0{
-            pageControl.currentPage = 0
-        } else if scrollView.contentOffset.x == self.view.frame.width{
-            pageControl.currentPage = 1
-        } else if scrollView.contentOffset.x == self.view.frame.width*2{
-            pageControl.currentPage = 2
+        if scrollView.isPagingEnabled == true {
+            if scrollView.contentOffset.x == 0{
+                pageControl.currentPage = 0
+            } else if scrollView.contentOffset.x == self.view.frame.width{
+                pageControl.currentPage = 1
+            } else if scrollView.contentOffset.x == self.view.frame.width*2{
+                pageControl.currentPage = 2
+            }
         }
     }
 
