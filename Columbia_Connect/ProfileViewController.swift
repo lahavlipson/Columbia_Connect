@@ -20,16 +20,34 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var tableView: UITableView!
     
+    //@IBOutlet weak var tableDistFromTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableDistFromTopConstraint: NSLayoutConstraint!
+    
+    let maxHeaderHeight: CGFloat = 0;
+    var minHeaderHeight: CGFloat = 44 - 370;
+    
+    var previousScrollOffset: CGFloat = 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableDistFromTopConstraint.constant = self.maxHeaderHeight
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        minHeaderHeight = -1*(self.mainScrollView.frame.height + self.profilePictureView.frame.height/2) + 20
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        segmentedControl.titles = ["Profile","Classes"]
         
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        segmentedControl.titles = ["Profile","Classes"]
         segmentedControl.backgroundColor = UIColor(white: 0.85, alpha: 1)
         segmentedControl.indicatorViewBackgroundColor = UIColor.white
         segmentedControl.cornerRadius = segmentedControl.frame.height/2
@@ -101,6 +119,50 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     }
     */
 
+}
+
+extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel!.text = "Cell \(indexPath.row)"
+        return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollDiff = scrollView.contentOffset.y - self.previousScrollOffset
+        let absoluteTop: CGFloat = 0;
+        let absoluteBottom: CGFloat = scrollView.contentSize.height - scrollView.frame.size.height;
+        
+        let isScrollingDown = scrollDiff > 0 && scrollView.contentOffset.y > absoluteTop
+        let isScrollingUp = scrollDiff < 0 && scrollView.contentOffset.y < absoluteBottom
+
+        
+        var newHeight = self.tableDistFromTopConstraint.constant
+        if isScrollingDown {
+            newHeight = max(self.minHeaderHeight, self.tableDistFromTopConstraint.constant - abs(scrollDiff))
+        } else if isScrollingUp && scrollView.contentOffset.y <= 0 {
+            newHeight = min(self.maxHeaderHeight, self.tableDistFromTopConstraint.constant + abs(scrollDiff))
+        }
+        
+        if newHeight != self.tableDistFromTopConstraint.constant {
+            self.tableDistFromTopConstraint.constant = newHeight
+            self.setScrollPosition(position: self.previousScrollOffset)
+        }
+        
+        self.previousScrollOffset = scrollView.contentOffset.y
+    }
+    
+    func setScrollPosition(position: CGFloat) {
+        self.tableView.contentOffset = CGPoint(x: self.tableView.contentOffset.x, y: position)
+    }
 }
 
 extension UIColor {
