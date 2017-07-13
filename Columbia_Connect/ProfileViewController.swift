@@ -22,8 +22,9 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    //@IBOutlet weak var tableDistFromTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableDistFromTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var shadowView: UIView!
     
     let maxHeaderHeight: CGFloat = 0;
     var minHeaderHeight: CGFloat = 44 - 370;
@@ -33,12 +34,13 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableDistFromTopConstraint.constant = self.maxHeaderHeight
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        minHeaderHeight = -1*(self.mainScrollView.frame.height + self.profilePictureView.frame.height/2) + 20
+        minHeaderHeight = -1*(self.mainScrollView.frame.maxY - 64)
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -46,6 +48,11 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 1
+        shadowView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        shadowView.layer.shadowRadius = 6
         
         segmentedControl.titles = ["Profile","Classes"]
         segmentedControl.backgroundColor = UIColor(white: 0.85, alpha: 1)
@@ -61,6 +68,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         mainScrollView.contentSize = CGSize(width: self.view.frame.width*3, height: self.segmentedControl.frame.height)
         
         pageControl.pageIndicatorTintColor = UIColor(hex: 0xA7B6C6)
+        scrollViewDidEndDecelerating(mainScrollView)
         
         let v = ProfileFirstPage.instanceFromNib()
         v.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: mainScrollView.frame.height)
@@ -102,6 +110,12 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            scrollViewDidEndDecelerating(mainScrollView)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -127,13 +141,17 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 40
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel!.text = "Cell \(indexPath.row)"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

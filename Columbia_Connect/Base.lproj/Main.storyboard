@@ -325,11 +325,18 @@
                                     <constraint firstItem="TKN-PT-Ze2" firstAttribute="top" secondItem="yXY-Ff-crR" secondAttribute="top" constant="4" id="jBi-Ts-q2n"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3u-69-2LX" userLabel="ShadowView">
+                                <rect key="frame" x="-0.5" y="518" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.75692020940000004" green="0.18668168199999999" blue="0.11841627759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="BLb-Ht-IlY"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3R6-lw-x8P">
                                 <rect key="frame" x="0.5" y="518" width="375" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSz-Ga-tPS" customClass="BetterSegmentedControl" customModule="Columbia_Connect" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSz-Ga-tPS" customClass="BetterSegmentedControl" customModule="Columbia_Connect" customModuleProvider="target">
                                 <rect key="frame" x="33" y="498" width="309" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -349,6 +356,7 @@
                             <constraint firstItem="3R6-lw-x8P" firstAttribute="top" secondItem="5RW-Bb-31X" secondAttribute="bottom" id="MIy-9h-OWd"/>
                             <constraint firstItem="3el-bD-Im8" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" id="OHB-GQ-Yhn"/>
                             <constraint firstItem="5RW-Bb-31X" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" id="Q3r-AQ-ZT6"/>
+                            <constraint firstItem="N3u-69-2LX" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" id="X1A-K2-rQO"/>
                             <constraint firstItem="3el-bD-Im8" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="ZFs-Yr-z5d"/>
                             <constraint firstItem="6gD-m9-pPM" firstAttribute="centerX" secondItem="5RW-Bb-31X" secondAttribute="centerX" id="a1r-lW-Jl6"/>
                             <constraint firstItem="yXY-Ff-crR" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" multiplier="0.4" id="cCx-P8-jLW"/>
@@ -357,6 +365,8 @@
                             <constraint firstItem="3R6-lw-x8P" firstAttribute="width" secondItem="cR9-0E-Cye" secondAttribute="width" id="pki-YK-Sto"/>
                             <constraint firstItem="9XJ-XW-wgV" firstAttribute="top" secondItem="3R6-lw-x8P" secondAttribute="bottom" id="qZS-7c-k1J"/>
                             <constraint firstItem="5RW-Bb-31X" firstAttribute="top" secondItem="3el-bD-Im8" secondAttribute="bottom" id="r6Y-gs-GdE"/>
+                            <constraint firstItem="3R6-lw-x8P" firstAttribute="top" secondItem="N3u-69-2LX" secondAttribute="top" id="sFS-Ez-din"/>
+                            <constraint firstItem="N3u-69-2LX" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="snj-3n-QZ7"/>
                             <constraint firstItem="yXY-Ff-crR" firstAttribute="centerX" secondItem="cR9-0E-Cye" secondAttribute="centerX" id="zcs-HW-AUG"/>
                         </constraints>
                     </view>
@@ -366,6 +376,7 @@
                         <outlet property="profileImageView" destination="TKN-PT-Ze2" id="9QU-ja-WcW"/>
                         <outlet property="profilePictureView" destination="yXY-Ff-crR" id="V4t-nG-hsM"/>
                         <outlet property="segmentedControl" destination="iSz-Ga-tPS" id="GnA-52-gZl"/>
+                        <outlet property="shadowView" destination="N3u-69-2LX" id="Zp3-Nf-h7h"/>
                         <outlet property="tableDistFromTopConstraint" destination="MIy-9h-OWd" id="3Jf-Hd-kcz"/>
                         <outlet property="tableView" destination="3R6-lw-x8P" id="adA-wQ-sps"/>
                     </connections>
@@ -550,7 +561,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="el5-db-CG5" id="eFL-p5-cG7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
