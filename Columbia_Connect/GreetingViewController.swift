@@ -10,46 +10,38 @@ import UIKit
 
 class GreetingViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     @IBOutlet weak var connectLabel: UILabel!
     
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var uniTextField: UITextField!
-    
-    @IBOutlet weak var passwordTextField: UITextField!
-    
+        
     @IBAction func loginButtonPressed(_ sender: Any) {
-        let enteredPassword = passwordTextField.text!
-        if let uniIsValid = doesUniExist(uni: uniTextField.text!){
-            if !uniIsValid {
-                errorLabel.text = "The uni is invalid"
+        let enteredUni = uniTextField.text!
+        if let uniIsValid = doesUniExist(uni: enteredUni){
+            if enteredUni == ""{
+                messageLabel.text = "Please enter your uni"
+            } else if !uniIsValid {
+                messageLabel.text = "The uni is invalid"
             } else {
-                if enteredPassword.characters.count < 8 {
-                    errorLabel.text = "Password must contain 8+ characters"
-                } else if enteredPassword.rangeOfCharacter(from: CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZ")) == nil{
-                    errorLabel.text = "Password must contain a capital and lowercase letter"
-                } else if enteredPassword.rangeOfCharacter(from: CharacterSet(charactersIn: "1234567890")) == nil{
-                    errorLabel.text = "Password must contain at least one number"
-                } else {
-                    performSegue(withIdentifier: "loginSegue", sender: nil)
-                }
+               performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         } else {
-            errorLabel.text = "An error occured when trying to connect"
+            messageLabel.text = "An error occured when trying to connect"
         }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //WILL REMOVE
-        passwordTextField.text = "1Aaaaaaa"
         uniTextField.text = "lol2107"
         //WILL REMOVE
         
-        errorLabel.text = ""
+        messageLabel.text = ""
         
         connectLabel.addTextSpacing(val: 3)
         uniTextField.delegate = self
@@ -57,11 +49,7 @@ class GreetingViewController: UIViewController, UITextFieldDelegate {
         uniTextField.backgroundColor = UIColor.clear
         uniTextField.borderStyle = UITextBorderStyle.none
         uniTextField.placeholderColor = UIColor(white: 1, alpha: 0.6)
-        //passwordTextField.tag = 2
-        passwordTextField.delegate = self
-        passwordTextField.backgroundColor = UIColor.clear
-        passwordTextField.borderStyle = UITextBorderStyle.none
-        passwordTextField.placeholderColor = UIColor(white: 1, alpha: 0.6)
+
         
         
         // Do any additional setup after loading the view.
