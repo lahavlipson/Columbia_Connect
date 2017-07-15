@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F84C56441833EA4F9F110E0 /* Pods_Columbia_Connect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF7931FDFD2DEDD67D7128 /* Pods_Columbia_Connect.framework */; };
+		CD013DD41F1A75D50046FB74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD013DD31F1A75D50046FB74 /* GoogleService-Info.plist */; };
 		CD228E751F17D406009C7C6E /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD228E741F17D405009C7C6E /* FacebookLoginViewController.swift */; };
 		CD228E771F181568009C7C6E /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD228E761F181568009C7C6E /* VerifyViewController.swift */; };
 		CD7B17511F0DB6A30008EE79 /* BetterSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B17501F0DB6A30008EE79 /* BetterSegmentedControl.swift */; };
@@ -53,6 +54,7 @@
 		6F1F145C215BCF414D56BD7A /* Pods-Columbia_Connect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Columbia_Connect.release.xcconfig"; path = "Pods/Target Support Files/Pods-Columbia_Connect/Pods-Columbia_Connect.release.xcconfig"; sourceTree = "<group>"; };
 		A4E7ECA636DC7CC1BCA09414 /* Pods-Columbia_Connect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Columbia_Connect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Columbia_Connect/Pods-Columbia_Connect.debug.xcconfig"; sourceTree = "<group>"; };
 		CD013DD21F1963210046FB74 /* Columbia_Connect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Columbia_Connect.entitlements; sourceTree = "<group>"; };
+		CD013DD31F1A75D50046FB74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD228E741F17D405009C7C6E /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		CD228E761F181568009C7C6E /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		CD7B17501F0DB6A30008EE79 /* BetterSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterSegmentedControl.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				CDB361B21F09C41D00E43351 /* Assets.xcassets */,
 				CDB361B41F09C41D00E43351 /* LaunchScreen.storyboard */,
 				CDB361B71F09C41D00E43351 /* Info.plist */,
+				CD013DD31F1A75D50046FB74 /* GoogleService-Info.plist */,
 			);
 			path = Columbia_Connect;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				CDB361B11F09C41D00E43351 /* Main.storyboard in Resources */,
 				CD7B17551F0DD5E30008EE79 /* ProfileFirstPage.xib in Resources */,
 				CD7B17591F0DE7DE0008EE79 /* RecommendUserView.xib in Resources */,
+				CD013DD41F1A75D50046FB74 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
