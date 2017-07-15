@@ -241,28 +241,39 @@
                                     <action selector="backButtonPressed:" destination="sfs-Ef-M52" eventType="touchUpInside" id="c9g-WY-gYh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There was an error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIl-up-bSs">
+                                <rect key="frame" x="30.5" y="281" width="314" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.75692020940000004" green="0.18668168199999999" blue="0.11841627759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZlH-Pn-4hn" firstAttribute="height" secondItem="dDA-O4-D64" secondAttribute="height" id="CFR-cq-6pY"/>
+                            <constraint firstItem="mjG-4n-cPY" firstAttribute="top" secondItem="BIl-up-bSs" secondAttribute="bottom" constant="8.5" id="F58-Gt-mwh"/>
                             <constraint firstItem="ZlH-Pn-4hn" firstAttribute="width" secondItem="dDA-O4-D64" secondAttribute="width" id="FbJ-i6-77R"/>
                             <constraint firstItem="ZlH-Pn-4hn" firstAttribute="top" secondItem="gTg-HL-gBI" secondAttribute="top" constant="-30" id="Phm-ff-hkb"/>
                             <constraint firstItem="mjG-4n-cPY" firstAttribute="leading" secondItem="ZlH-Pn-4hn" secondAttribute="leading" constant="60" id="WRg-V2-yEu"/>
                             <constraint firstItem="mjG-4n-cPY" firstAttribute="centerY" secondItem="ZlH-Pn-4hn" secondAttribute="centerY" id="Xvw-AY-5Lt"/>
                             <constraint firstItem="mjG-4n-cPY" firstAttribute="centerX" secondItem="ZlH-Pn-4hn" secondAttribute="centerX" id="aB3-94-loz"/>
+                            <constraint firstItem="BIl-up-bSs" firstAttribute="centerX" secondItem="ZlH-Pn-4hn" secondAttribute="centerX" id="c6C-pL-Hpz"/>
                             <constraint firstItem="ZlH-Pn-4hn" firstAttribute="centerY" secondItem="dDA-O4-D64" secondAttribute="centerY" id="eGQ-D4-UOv"/>
                             <constraint firstItem="ZlH-Pn-4hn" firstAttribute="leading" secondItem="gTg-HL-gBI" secondAttribute="leading" constant="-20" id="m1F-74-UE2"/>
+                            <constraint firstItem="BIl-up-bSs" firstAttribute="trailing" secondItem="ZlH-Pn-4hn" secondAttribute="trailing" constant="-30" id="qRP-1t-lQL"/>
                             <constraint firstItem="ZlH-Pn-4hn" firstAttribute="centerX" secondItem="dDA-O4-D64" secondAttribute="centerX" id="wTl-TU-zqE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="mjG-4n-cPY" id="o9B-Vd-BpG"/>
-                        <segue destination="Wzw-L2-qOw" kind="show" identifier="fromFBConnect" id="Njg-ku-fP9"/>
+                        <outlet property="messageLabel" destination="BIl-up-bSs" id="ng7-lt-jdH"/>
+                        <segue destination="Wzw-L2-qOw" kind="show" identifier="toVerifySegue" id="Njg-ku-fP9"/>
+                        <segue destination="2sT-Yn-Q7f" kind="show" identifier="signedInSegue" id="jns-JB-tv1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M93-Pg-dyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1870" y="-1150"/>
+            <point key="canvasLocation" x="-1844" y="-1150"/>
         </scene>
         <!--Verify View Controller-->
         <scene sceneID="zie-Xk-95o">
@@ -348,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgv-kz-L7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1073" y="-1145"/>
+            <point key="canvasLocation" x="-1186" y="-996"/>
         </scene>
         <!--Recommendations-->
         <scene sceneID="m2e-XS-vqX">
@@ -540,7 +551,7 @@
                                     <constraint firstAttribute="width" secondItem="fQF-B2-PCi" secondAttribute="height" multiplier="1:1" id="Z3Z-Wj-rTm"/>
                                     <constraint firstAttribute="width" constant="40" id="uph-e9-sy3"/>
                                 </constraints>
-                                <state key="normal" image="back_arrow"/>
+                                <state key="normal" backgroundImage="back_arrow"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="2sT-Yn-Q7f" eventType="touchUpInside" id="wE3-yp-5vT"/>
                                 </connections>
@@ -724,4 +735,7 @@
         <image name="second" width="30" height="30"/>
         <image name="uni_icon" width="22" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="n8H-Vf-XYl"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -211,6 +211,7 @@
 				CDB361A41F09C41D00E43351 /* Resources */,
 				D14056CA5F894D5DCE32B326 /* [CP] Embed Pods Frameworks */,
 				C9416E8F556EB6063666EC34 /* [CP] Copy Pods Resources */,
+				CD013DD51F1ABECE0046FB74 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -371,6 +372,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Columbia_Connect/Pods-Columbia_Connect-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CD013DD51F1ABECE0046FB74 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
 		};
 		D14056CA5F894D5DCE32B326 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -16,6 +16,8 @@ class StudentTypeViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBOutlet weak var typePickerView: UIPickerView!
     
+    var userProfile = Profile()
+    
     var choice = 3
     
     let typeArray = ["Undergrad class of 2018", "Undergrad class of 2019", "Undergrad class of 2020",
