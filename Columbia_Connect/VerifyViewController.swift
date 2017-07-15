@@ -10,6 +10,8 @@ import UIKit
 
 class VerifyViewController: UIViewController {
     
+    var userProfile = Profile()
+    
     @IBOutlet weak var verifiedLabel: UILabel!
 
     @IBOutlet weak var continueButton: UIButton!
@@ -25,7 +27,8 @@ class VerifyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        print("Uni: \(self.userProfile.uni)")
+        print("FacebookID: \(self.userProfile.facebookID)")
 
         // Do any additional setup after loading the view.
     }

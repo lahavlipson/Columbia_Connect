@@ -12,8 +12,10 @@ import FacebookLogin
 
 class FacebookLoginViewController: UIViewController {
     
+    var userProfile = Profile()
+    
     @IBAction func fbLoginButtonPressed(_ sender: Any) {
-        //performSegue(withIdentifier: "fromFBConnect", sender: nil)
+        
         loginButtonClicked()
         print()
     }
@@ -27,7 +29,6 @@ class FacebookLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.fbLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
     }
     
     // Once the button is clicked, show the login dialog
@@ -42,8 +43,8 @@ class FacebookLoginViewController: UIViewController {
                 print("User cancelled login.")
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 print("Logged in!")
-                print(accessToken.userId)
-                print(AccessToken.current?.userId)
+                //print(accessToken.userId)
+                //print(AccessToken.current?.userId)
                 
                 let params = ["fields" : "name, id, gender"]
                 let graphRequest = GraphRequest(graphPath: "me", parameters: params)
@@ -55,20 +56,21 @@ class FacebookLoginViewController: UIViewController {
                         break
                     case .success(let graphResponse):
                         if let responseDictionary = graphResponse.dictionaryValue {
-                            //print(responseDictionary)
                             print(responseDictionary)
-                            let userID = responseDictionary["id"] as! NSString
-                            var facebookProfileUrl = URL(string: "https://graph.facebook.com/1550731278316708/picture?type=large")
+                            self.userProfile.gender = responseDictionary["gender"] as? NSString as String?
+                            let userID = (responseDictionary["id"] as! NSString) as String
+                            self.userProfile.facebookID = userID
+                            var facebookProfileUrl = URL(string: "https://graph.facebook.com/\(userID)/picture?type=large")
                             let data = try? Data(contentsOf: facebookProfileUrl!)
-                            let img = UIImage(data: data!)
-                            print(facebookProfileUrl)
+                            self.userProfile.profilePic = UIImage(data: data!)
+                            //print(facebookProfileUrl)
+                            self.performSegue(withIdentifier: "fromFBConnect", sender: nil)
                         }
                     }
                 }
             }
         }
     }
-    
 
     
     override func didReceiveMemoryWarning() {
@@ -77,14 +79,41 @@ class FacebookLoginViewController: UIViewController {
     }
     
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        let destinationVC = segue.destination as! VerifyViewController
+        destinationVC.userProfile = self.userProfile
      }
-     */
+ 
     
 }
+
+//enum StudentType {
+//    case undergrad, graduate, masters, phd, Other
+//}
+
+struct Course {
+    var id = ""
+    var professor = ""
+    var time = NSDateInterval()
+    var description = ""
+}
+
+enum School {
+    case seas, columbiaCollege, barnard, generalStudies, gsapp, schoolOfArts, gsas, business, colOfPhysAndSurg
+    case dentalMed, sipa, journalism, profStudies, pubHealth, socialWork, teachersCollege, jewishTS, other, none
+}
+
+//GSAS (logo)
+//barnard
+//business
+//colOfPhysAndSurg
+//columbiaCollege
+//SEAS
+//GS
+//jts
+
+

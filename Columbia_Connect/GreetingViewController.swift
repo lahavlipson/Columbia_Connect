@@ -17,6 +17,8 @@ class GreetingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var uniTextField: UITextField!
+    
+    var userProfile = Profile()
         
     @IBAction func loginButtonPressed(_ sender: Any) {
         let enteredUni = uniTextField.text!
@@ -26,7 +28,8 @@ class GreetingViewController: UIViewController, UITextFieldDelegate {
             } else if !uniIsValid {
                 messageLabel.text = "The uni is invalid"
             } else {
-               performSegue(withIdentifier: "loginSegue", sender: nil)
+                userProfile.uni = enteredUni
+                performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         } else {
             messageLabel.text = "An error occured when trying to connect"
@@ -85,17 +88,19 @@ class GreetingViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destinationVC = segue.destination as! FacebookLoginViewController
+        destinationVC.userProfile = self.userProfile
     }
-    */
+ 
 
 }
+
+// MARK: - Extensions
 
 extension UILabel {
     func addTextSpacing(val: CGFloat) {
@@ -122,29 +127,17 @@ extension UITextField {
     }
 }
 
-extension UIView {
-    
-    func bindToKeyboard(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-    }
-    
-    func unbindFromKeyboard(){
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-    }
-    
-    @objc
-    func keyboardWillChange(notification: NSNotification) {
-        
-        guard let userInfo = notification.userInfo else { return }
-        
-        let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! Double
-        let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as! UInt
-        let curFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        let targetFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let deltaY = targetFrame.origin.y - curFrame.origin.y
-        
-        UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIViewKeyframeAnimationOptions(rawValue: curve), animations: {
-            self.frame.origin.y += deltaY
-        })
-    }  
+struct Profile {
+    var name = ""
+    var uni = ""
+    var facebookID = ""
+    var gender: String?
+    var birthday = NSDate()
+    var profilePic: UIImage?
+    var school = School.none
+    var graduatingClass = Int()
+    var studying = ""
+    var courses: [Course] = []
 }
+
+
