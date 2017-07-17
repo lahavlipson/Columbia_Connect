@@ -34,6 +34,15 @@ class StudentTypeViewController: UIViewController, UIPickerViewDataSource, UIPic
         dismiss(animated: true) { 
         }
     }
+    
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        if graduate[choice] {
+            performSegue(withIdentifier: "toCourseChooserSegue", sender: self)
+        } else {
+           performSegue(withIdentifier: "toGradClassSegue", sender: self)
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,69 +112,53 @@ class StudentTypeViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         choice = row
+        if choice == 0 || choice == 13 {
+            graduateSwitch(shouldBeVisible: true)
+        } else {
+            graduateSwitch(shouldBeVisible: false)
+        }
         switch choice {
         case 0:
-            graduateSwitch(shouldBeVisible: true)
             school = .seas
         case 1:
-            graduateSwitch(shouldBeVisible: false)
             school = .columbiaCollege
         case 2:
-            graduateSwitch(shouldBeVisible: false)
             school = .barnard
         case 3:
-            graduateSwitch(shouldBeVisible: false)
             school = .generalStudies
         case 4:
-            graduateSwitch(shouldBeVisible: false)
             school = .business
         case 5:
-            graduateSwitch(shouldBeVisible: false)
             school = .law
         case 6:
-            graduateSwitch(shouldBeVisible: false)
             school = .sipa
         case 7:
-            graduateSwitch(shouldBeVisible: false)
             school = .journalism
         case 8:
-            graduateSwitch(shouldBeVisible: false)
             school = .gsapp
         case 9:
-            graduateSwitch(shouldBeVisible: false)
             school = .schoolOfArts
         case 10:
-            graduateSwitch(shouldBeVisible: false)
             school = .gsas
         case 11:
-            graduateSwitch(shouldBeVisible: false)
             school = .colOfPhysAndSurg
         case 12:
-            graduateSwitch(shouldBeVisible: false)
             school = .dentalMed
         case 13:
-            graduateSwitch(shouldBeVisible: true)
             school = .jewishTS
         case 14:
-            graduateSwitch(shouldBeVisible: false)
             school = .teachersCollege
         case 15:
-            graduateSwitch(shouldBeVisible: false)
             school = .nursing
         case 16:
-            graduateSwitch(shouldBeVisible: false)
             school = .profStudies
         case 17:
-            graduateSwitch(shouldBeVisible: false)
             school = .pubHealth
         case 18:
-            graduateSwitch(shouldBeVisible: false)
             school = .socialWork
         case 19:
-            graduateSwitch(shouldBeVisible: false)
             school = .uts
         default: break
-            //
         }
     }
     
@@ -201,7 +194,13 @@ class StudentTypeViewController: UIViewController, UIPickerViewDataSource, UIPic
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        self.userProfile.graduatingClass = nil
+        if let destinationVC = segue.destination as? GradClassViewController {
+            destinationVC.userProfile = self.userProfile
+        } else {
+            let destinationVC = segue.destination as! ChooseCoursesViewController
+            destinationVC.userProfile = self.userProfile
+        }
     }
  
 

@@ -12,5 +12,6 @@ target 'Columbia_Connect' do
   pod 'FacebookShare', :git => 'https://github.com/1amageek/facebook-sdk-swift'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'GMStepper'
 
 end

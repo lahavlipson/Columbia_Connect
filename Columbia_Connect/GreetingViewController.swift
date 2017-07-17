@@ -135,8 +135,7 @@ struct Profile {
     var birthday = NSDate()
     var profilePic: UIImage?
     var school = School.none
-    var studentType = StudentType.none
-    var graduatingClass = Int()
+    var graduatingClass: Int?
     var studying = ""
     var courses: [Course] = []
 }

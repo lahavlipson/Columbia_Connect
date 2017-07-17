@@ -43,6 +43,7 @@ PODS:
     - nanopb (~> 0.3)
   - FirebaseInstanceID (2.0.0):
     - FirebaseCore (~> 4.0)
+  - GMStepper (2.0.0)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - FacebookShare (from `https://github.com/1amageek/facebook-sdk-swift`)
   - Firebase/Auth
   - Firebase/Core
+  - GMStepper
   - iCarousel
 
 EXTERNAL SOURCES:
@@ -91,11 +93,12 @@ SPEC CHECKSUMS:
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
   FirebaseCore: cfc042628ef9f20debe09c0eb683135fcd404cb4
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  GMStepper: 6aff0c881afac2f432e5c9b0df71e44e14110a06
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
 
-PODFILE CHECKSUM: dc52f0f1a6a52ace5bb838cb6b829661feb775d7
+PODFILE CHECKSUM: 6d785237304fe2c0a4c1fb2d4e906fffc863d459
 
 COCOAPODS: 1.2.1

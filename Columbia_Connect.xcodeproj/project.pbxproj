@@ -11,6 +11,8 @@
 		CD013DD41F1A75D50046FB74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD013DD31F1A75D50046FB74 /* GoogleService-Info.plist */; };
 		CD228E751F17D406009C7C6E /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD228E741F17D405009C7C6E /* FacebookLoginViewController.swift */; };
 		CD228E771F181568009C7C6E /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD228E761F181568009C7C6E /* VerifyViewController.swift */; };
+		CD4D45A41F1C3F960042F25E /* GradClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D45A31F1C3F960042F25E /* GradClassViewController.swift */; };
+		CD4D45A61F1D30B60042F25E /* ChooseCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D45A51F1D30B60042F25E /* ChooseCoursesViewController.swift */; };
 		CD7B17511F0DB6A30008EE79 /* BetterSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B17501F0DB6A30008EE79 /* BetterSegmentedControl.swift */; };
 		CD7B17531F0DB77D0008EE79 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B17521F0DB77D0008EE79 /* ProfileViewController.swift */; };
 		CD7B17551F0DD5E30008EE79 /* ProfileFirstPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7B17541F0DD5E30008EE79 /* ProfileFirstPage.xib */; };
@@ -57,6 +59,8 @@
 		CD013DD31F1A75D50046FB74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD228E741F17D405009C7C6E /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		CD228E761F181568009C7C6E /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
+		CD4D45A31F1C3F960042F25E /* GradClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradClassViewController.swift; sourceTree = "<group>"; };
+		CD4D45A51F1D30B60042F25E /* ChooseCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCoursesViewController.swift; sourceTree = "<group>"; };
 		CD7B17501F0DB6A30008EE79 /* BetterSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterSegmentedControl.swift; sourceTree = "<group>"; };
 		CD7B17521F0DB77D0008EE79 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CD7B17541F0DD5E30008EE79 /* ProfileFirstPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileFirstPage.xib; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 		CD7B17581F0DE7DE0008EE79 /* RecommendUserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendUserView.xib; sourceTree = "<group>"; };
 		CD7B175A1F0DE7F80008EE79 /* RecommendUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = RecommendUserView.swift; sourceTree = "<group>"; };
 		CD7B175C1F0E85320008EE79 /* SVGPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGPath.swift; sourceTree = "<group>"; };
-		CD7B17601F0F05F50008EE79 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CD7B17601F0F05F50008EE79 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ../SearchViewController.swift; sourceTree = "<group>"; };
 		CDB361A61F09C41D00E43351 /* Columbia_Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Columbia_Connect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB361A91F09C41D00E43351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDB361AB1F09C41D00E43351 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +135,6 @@
 		CDB3619D1F09C41D00E43351 = {
 			isa = PBXGroup;
 			children = (
-				CD7B17601F0F05F50008EE79 /* SearchViewController.swift */,
 				CDB361A81F09C41D00E43351 /* Columbia_Connect */,
 				CDB361BF1F09C41E00E43351 /* Columbia_ConnectTests */,
 				CDB361CA1F09C41E00E43351 /* Columbia_ConnectUITests */,
@@ -154,6 +157,8 @@
 		CDB361A81F09C41D00E43351 /* Columbia_Connect */ = {
 			isa = PBXGroup;
 			children = (
+				CD7B17601F0F05F50008EE79 /* SearchViewController.swift */,
+				CD4D45A31F1C3F960042F25E /* GradClassViewController.swift */,
 				CD013DD21F1963210046FB74 /* Columbia_Connect.entitlements */,
 				CDB361A91F09C41D00E43351 /* AppDelegate.swift */,
 				CD7B17501F0DB6A30008EE79 /* BetterSegmentedControl.swift */,
@@ -161,6 +166,7 @@
 				CDB361AB1F09C41D00E43351 /* FirstViewController.swift */,
 				CDB361AD1F09C41D00E43351 /* SecondViewController.swift */,
 				CDB361AF1F09C41D00E43351 /* Main.storyboard */,
+				CD4D45A51F1D30B60042F25E /* ChooseCoursesViewController.swift */,
 				CD228E761F181568009C7C6E /* VerifyViewController.swift */,
 				CD228E741F17D405009C7C6E /* FacebookLoginViewController.swift */,
 				CD7B17521F0DB77D0008EE79 /* ProfileViewController.swift */,
@@ -408,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4D45A61F1D30B60042F25E /* ChooseCoursesViewController.swift in Sources */,
 				CDB361AE1F09C41D00E43351 /* SecondViewController.swift in Sources */,
 				CDB361AA1F09C41D00E43351 /* AppDelegate.swift in Sources */,
 				CD228E751F17D406009C7C6E /* FacebookLoginViewController.swift in Sources */,
@@ -421,6 +428,7 @@
 				CDB361AC1F09C41D00E43351 /* FirstViewController.swift in Sources */,
 				CD7B17531F0DB77D0008EE79 /* ProfileViewController.swift in Sources */,
 				CDB361DA1F09CA1100E43351 /* GreetingViewController.swift in Sources */,
+				CD4D45A41F1C3F960042F25E /* GradClassViewController.swift in Sources */,
 				CD228E771F181568009C7C6E /* VerifyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
