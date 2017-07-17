@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2sT-Yn-Q7f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9yb-7g-dtU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -746,10 +746,79 @@
                             <constraint firstItem="ov8-vS-6OT" firstAttribute="width" secondItem="6Es-4Z-2PJ" secondAttribute="width" id="zwC-Vy-hCh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="9yb-7g-dtU" kind="show" identifier="toProfilePicSegue" id="tDX-6d-o1F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PmT-eb-ACM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1100" y="-1200"/>
+        </scene>
+        <!--Profile Picture View Controller-->
+        <scene sceneID="7Lg-LY-g4n">
+            <objects>
+                <viewController id="9yb-7g-dtU" customClass="ProfilePictureViewController" customModule="Columbia_Connect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SQF-K4-NkM"/>
+                        <viewControllerLayoutGuide type="bottom" id="lU6-Cb-Qp9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PZe-6E-GDn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cu_background" translatesAutoresizingMaskIntoConstraints="NO" id="C3n-AT-pDm">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Li4-zj-lcc">
+                                <rect key="frame" x="19.5" y="29.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CXr-ID-8IC"/>
+                                    <constraint firstAttribute="width" constant="40" id="aAk-Ap-WDs"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back_arrow"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="9yb-7g-dtU" eventType="touchUpInside" id="Z2R-Sx-fwM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAQ-92-Rac">
+                                <rect key="frame" x="88" y="546.5" width="198" height="40"/>
+                                <state key="normal" backgroundImage="next button"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="9yb-7g-dtU" eventType="touchUpInside" id="0VQ-Ih-Xsr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-wt-Nc5">
+                                <rect key="frame" x="75" y="221" width="225" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Iav-wt-Nc5" secondAttribute="height" multiplier="1:1" id="H5K-B8-d58"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="photoButtonPressed:" destination="9yb-7g-dtU" eventType="touchUpInside" id="HMF-7O-mCg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C3n-AT-pDm" firstAttribute="height" secondItem="PZe-6E-GDn" secondAttribute="height" id="B3L-U0-pwm"/>
+                            <constraint firstItem="vAQ-92-Rac" firstAttribute="centerX" secondItem="C3n-AT-pDm" secondAttribute="centerX" id="CK1-SG-6Px"/>
+                            <constraint firstItem="C3n-AT-pDm" firstAttribute="leading" secondItem="Li4-zj-lcc" secondAttribute="leading" constant="-20" id="d5S-bT-e6K"/>
+                            <constraint firstItem="Iav-wt-Nc5" firstAttribute="centerX" secondItem="C3n-AT-pDm" secondAttribute="centerX" id="d6k-ZJ-kuv"/>
+                            <constraint firstItem="vAQ-92-Rac" firstAttribute="bottom" secondItem="C3n-AT-pDm" secondAttribute="bottom" constant="-80" id="fbU-EM-45B"/>
+                            <constraint firstItem="C3n-AT-pDm" firstAttribute="centerY" secondItem="PZe-6E-GDn" secondAttribute="centerY" id="iuq-Ne-KRA"/>
+                            <constraint firstItem="Iav-wt-Nc5" firstAttribute="width" secondItem="C3n-AT-pDm" secondAttribute="width" multiplier="3/5" id="j0M-XP-Xbf"/>
+                            <constraint firstItem="C3n-AT-pDm" firstAttribute="top" secondItem="Li4-zj-lcc" secondAttribute="top" constant="-30" id="mon-AL-eFc"/>
+                            <constraint firstItem="Iav-wt-Nc5" firstAttribute="centerY" secondItem="C3n-AT-pDm" secondAttribute="centerY" id="pgW-pS-BxB"/>
+                            <constraint firstItem="C3n-AT-pDm" firstAttribute="centerX" secondItem="PZe-6E-GDn" secondAttribute="centerX" id="qnG-KQ-5AJ"/>
+                            <constraint firstItem="C3n-AT-pDm" firstAttribute="width" secondItem="PZe-6E-GDn" secondAttribute="width" id="ztO-1k-B5E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoButton" destination="Iav-wt-Nc5" id="c1d-jA-5yT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7Z-dB-auF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="-1192"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -895,6 +964,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="n8H-Vf-XYl"/>
-        <segue reference="yoa-rJ-hvR"/>
+        <segue reference="eLw-Nd-ujl"/>
     </inferredMetricsTieBreakers>
 </document>

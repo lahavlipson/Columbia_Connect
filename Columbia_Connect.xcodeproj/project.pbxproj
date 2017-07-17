@@ -13,6 +13,7 @@
 		CD228E771F181568009C7C6E /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD228E761F181568009C7C6E /* VerifyViewController.swift */; };
 		CD4D45A41F1C3F960042F25E /* GradClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D45A31F1C3F960042F25E /* GradClassViewController.swift */; };
 		CD4D45A61F1D30B60042F25E /* ChooseCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D45A51F1D30B60042F25E /* ChooseCoursesViewController.swift */; };
+		CD4D45A81F1D35540042F25E /* ProfilePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D45A71F1D35540042F25E /* ProfilePictureViewController.swift */; };
 		CD7B17511F0DB6A30008EE79 /* BetterSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B17501F0DB6A30008EE79 /* BetterSegmentedControl.swift */; };
 		CD7B17531F0DB77D0008EE79 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B17521F0DB77D0008EE79 /* ProfileViewController.swift */; };
 		CD7B17551F0DD5E30008EE79 /* ProfileFirstPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7B17541F0DD5E30008EE79 /* ProfileFirstPage.xib */; };
@@ -61,6 +62,7 @@
 		CD228E761F181568009C7C6E /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		CD4D45A31F1C3F960042F25E /* GradClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradClassViewController.swift; sourceTree = "<group>"; };
 		CD4D45A51F1D30B60042F25E /* ChooseCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCoursesViewController.swift; sourceTree = "<group>"; };
+		CD4D45A71F1D35540042F25E /* ProfilePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePictureViewController.swift; sourceTree = "<group>"; };
 		CD7B17501F0DB6A30008EE79 /* BetterSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterSegmentedControl.swift; sourceTree = "<group>"; };
 		CD7B17521F0DB77D0008EE79 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CD7B17541F0DD5E30008EE79 /* ProfileFirstPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileFirstPage.xib; sourceTree = "<group>"; };
@@ -157,28 +159,29 @@
 		CDB361A81F09C41D00E43351 /* Columbia_Connect */ = {
 			isa = PBXGroup;
 			children = (
-				CD7B17601F0F05F50008EE79 /* SearchViewController.swift */,
-				CD4D45A31F1C3F960042F25E /* GradClassViewController.swift */,
-				CD013DD21F1963210046FB74 /* Columbia_Connect.entitlements */,
 				CDB361A91F09C41D00E43351 /* AppDelegate.swift */,
+				CDB361D91F09CA1100E43351 /* GreetingViewController.swift */,
+				CD228E741F17D405009C7C6E /* FacebookLoginViewController.swift */,
+				CD228E761F181568009C7C6E /* VerifyViewController.swift */,
+				CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */,
+				CD4D45A31F1C3F960042F25E /* GradClassViewController.swift */,
+				CD4D45A51F1D30B60042F25E /* ChooseCoursesViewController.swift */,
+				CD4D45A71F1D35540042F25E /* ProfilePictureViewController.swift */,
+				CD7B17601F0F05F50008EE79 /* SearchViewController.swift */,
+				CDB361AF1F09C41D00E43351 /* Main.storyboard */,
 				CD7B17501F0DB6A30008EE79 /* BetterSegmentedControl.swift */,
 				CD7B175C1F0E85320008EE79 /* SVGPath.swift */,
 				CDB361AB1F09C41D00E43351 /* FirstViewController.swift */,
 				CDB361AD1F09C41D00E43351 /* SecondViewController.swift */,
-				CDB361AF1F09C41D00E43351 /* Main.storyboard */,
-				CD4D45A51F1D30B60042F25E /* ChooseCoursesViewController.swift */,
-				CD228E761F181568009C7C6E /* VerifyViewController.swift */,
-				CD228E741F17D405009C7C6E /* FacebookLoginViewController.swift */,
 				CD7B17521F0DB77D0008EE79 /* ProfileViewController.swift */,
 				CDB361E21F0D4DC200E43351 /* RecommendViewController.swift */,
 				CDB361E11F0D498A00E43351 /* Columbia_Connect_Bridging-Header.h */,
-				CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */,
-				CDB361D91F09CA1100E43351 /* GreetingViewController.swift */,
 				CD7B17581F0DE7DE0008EE79 /* RecommendUserView.xib */,
 				CD7B17541F0DD5E30008EE79 /* ProfileFirstPage.xib */,
 				CD7B175A1F0DE7F80008EE79 /* RecommendUserView.swift */,
 				CD7B17561F0DD62D0008EE79 /* ProfileFirstPage.swift */,
 				CDB361B21F09C41D00E43351 /* Assets.xcassets */,
+				CD013DD21F1963210046FB74 /* Columbia_Connect.entitlements */,
 				CDB361B41F09C41D00E43351 /* LaunchScreen.storyboard */,
 				CDB361B71F09C41D00E43351 /* Info.plist */,
 				CD013DD31F1A75D50046FB74 /* GoogleService-Info.plist */,
@@ -423,6 +426,7 @@
 				CDB361E31F0D4DC200E43351 /* RecommendViewController.swift in Sources */,
 				CD7B175B1F0DE7F80008EE79 /* RecommendUserView.swift in Sources */,
 				CD7B17611F0F05F50008EE79 /* SearchViewController.swift in Sources */,
+				CD4D45A81F1D35540042F25E /* ProfilePictureViewController.swift in Sources */,
 				CDB361DE1F0AA68C00E43351 /* StudentTypeViewController.swift in Sources */,
 				CD7B17571F0DD62D0008EE79 /* ProfileFirstPage.swift in Sources */,
 				CDB361AC1F09C41D00E43351 /* FirstViewController.swift in Sources */,

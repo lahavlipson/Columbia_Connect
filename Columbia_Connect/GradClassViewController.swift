@@ -21,7 +21,9 @@ class GradClassViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "fromGradClassSegue", sender: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

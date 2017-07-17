@@ -1,5 +1,5 @@
 //
-//  ChooseCoursesViewController.swift
+//  ProfilePictureViewController.swift
 //  Columbia_Connect
 //
 //  Created by Lahav Lipson on 7/17/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChooseCoursesViewController: UIViewController {
+class ProfilePictureViewController: UIViewController {
     
     var userProfile = Profile()
 
@@ -17,13 +17,22 @@ class ChooseCoursesViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toProfilePicSegue", sender: nil)
+        
     }
+    
+    @IBAction func photoButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBOutlet weak var photoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       // photoButton.setImage(UIImage(named: "camera"), for: .normal)
+        photoButton.setBackgroundImage(UIImage(named: "camera"), for: .normal)
+        photoButton.layer.cornerRadius = photoButton.frame.height/2
+        photoButton.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +46,7 @@ class ChooseCoursesViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! ProfilePictureViewController
-        destinationVC.userProfile = self.userProfile
+        
     }
  
 
