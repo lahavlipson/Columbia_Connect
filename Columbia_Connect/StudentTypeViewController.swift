@@ -18,10 +18,16 @@ class StudentTypeViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     var userProfile = Profile()
     
-    var choice = 3
+    var choice = 0
     
-    let typeArray = ["Undergrad class of 2018", "Undergrad class of 2019", "Undergrad class of 2020",
-                     "Undergrad class of 2021", "Masters Student", "PHD Student"]
+    var school = School.seas
+
+    let typeArray = ["SEAS (Engineering)", "Columbia College", "Barnard College", "General Studies", "Columbia Business School", "Columbia Law School", "International & Public Affairs", "Columbia Journalism School", "Architecture, Planning & Preservation", "School of the Arts", "Graduate School of Arts & Sciences", "College of Physicians and Surgeons", "College of Dental Medicine", "Jewish Theological Seminary", "Teachers College", "School of Nursing", "Professional Studies", "Public Health", "School of Social Work", "Union Theological Seminary"]
+    
+    var graduate = Array(repeating: true, count: 20)
+    
+    
+    @IBOutlet weak var graduateSwitch: BetterSegmentedControl!
     
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -36,15 +42,131 @@ class StudentTypeViewController: UIViewController, UIPickerViewDataSource, UIPic
         typePickerView.delegate = self
         
         typePickerView.selectRow(choice, inComponent: 0, animated: false)
+        
+        graduateSwitch.titles = ["Undergrad","Graduate"]
+        graduateSwitch.backgroundColor = UIColor.clear
+        graduateSwitch.indicatorViewBackgroundColor = UIColor(white: 1, alpha: 0.75)
+        graduateSwitch.indicatorViewBorderWidth = 4
+        graduateSwitch.indicatorViewBorderColor = UIColor.clear.cgColor
+        graduateSwitch.cornerRadius = graduateSwitch.frame.height/2
+        graduateSwitch.titleColor = UIColor(white: 0.75, alpha: 1)
+        graduateSwitch.selectedTitleColor = UIColor(white: 75/255, alpha: 1)
+        graduateSwitch.titleFont = UIFont(name: "HelveticaNeue-Medium", size: 18.0)!
+        graduateSwitch.selectedTitleFont = UIFont(name: "HelveticaNeue-Medium", size: 18.0)!
+        graduateSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+        graduateSwitch.layer.borderWidth = 1
+        graduateSwitch.layer.borderColor = UIColor(hex: 0x979797).cgColor
 
+        graduate[0] = false
+        graduate[1] = false
+        graduate[2] = false
+        graduate[3] = false
+        graduate[13] = false
+        
     }
-
-     func numberOfComponents(in pickerView: UIPickerView) -> Int{
+    
+    // MARK: - Graduate Switch
+    
+    func switchValueChanged(_ sender: BetterSegmentedControl) {
+        if sender.index == 0 {
+            print("Undergrad")
+        }
+        else {
+            print("Graduate")
+        }
+        graduate[typePickerView.selectedRow(inComponent: 0)] = sender.index == 1
+    }
+    
+    func graduateSwitch(shouldBeVisible: Bool){
+        if shouldBeVisible && self.graduateSwitch.isUserInteractionEnabled {
+            graduateSwitch.setIndex(UInt(graduate[self.choice]), animated: true)
+        } else if shouldBeVisible && !self.graduateSwitch.isUserInteractionEnabled {
+            graduateSwitch.setIndex(UInt(graduate[self.choice]), animated: false)
+            UIView.animate(withDuration: 0.2, animations: {
+                self.graduateSwitch.alpha = 1
+            }, completion: { (true) in
+                self.graduateSwitch.isUserInteractionEnabled = true
+            })
+        } else if !shouldBeVisible && self.graduateSwitch.isUserInteractionEnabled {
+            self.graduateSwitch.isUserInteractionEnabled = false
+            UIView.animate(withDuration: 0.2, animations: {
+                self.graduateSwitch.alpha = 0
+            })
+        }
+    }
+    
+    // MARK: - PickerView
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         choice = row
+        switch choice {
+        case 0:
+            graduateSwitch(shouldBeVisible: true)
+            school = .seas
+        case 1:
+            graduateSwitch(shouldBeVisible: false)
+            school = .columbiaCollege
+        case 2:
+            graduateSwitch(shouldBeVisible: false)
+            school = .barnard
+        case 3:
+            graduateSwitch(shouldBeVisible: false)
+            school = .generalStudies
+        case 4:
+            graduateSwitch(shouldBeVisible: false)
+            school = .business
+        case 5:
+            graduateSwitch(shouldBeVisible: false)
+            school = .law
+        case 6:
+            graduateSwitch(shouldBeVisible: false)
+            school = .sipa
+        case 7:
+            graduateSwitch(shouldBeVisible: false)
+            school = .journalism
+        case 8:
+            graduateSwitch(shouldBeVisible: false)
+            school = .gsapp
+        case 9:
+            graduateSwitch(shouldBeVisible: false)
+            school = .schoolOfArts
+        case 10:
+            graduateSwitch(shouldBeVisible: false)
+            school = .gsas
+        case 11:
+            graduateSwitch(shouldBeVisible: false)
+            school = .colOfPhysAndSurg
+        case 12:
+            graduateSwitch(shouldBeVisible: false)
+            school = .dentalMed
+        case 13:
+            graduateSwitch(shouldBeVisible: true)
+            school = .jewishTS
+        case 14:
+            graduateSwitch(shouldBeVisible: false)
+            school = .teachersCollege
+        case 15:
+            graduateSwitch(shouldBeVisible: false)
+            school = .nursing
+        case 16:
+            graduateSwitch(shouldBeVisible: false)
+            school = .profStudies
+        case 17:
+            graduateSwitch(shouldBeVisible: false)
+            school = .pubHealth
+        case 18:
+            graduateSwitch(shouldBeVisible: false)
+            school = .socialWork
+        case 19:
+            graduateSwitch(shouldBeVisible: false)
+            school = .uts
+        default: break
+            //
+        }
     }
     
      func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
@@ -73,19 +195,46 @@ class StudentTypeViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     
-    
-    
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
+ 
 
 }
+
+// MARK: - Extensions and More
+
+extension UInt {
+    init(_ bool:Bool) {
+        self = bool ? 1 : 0
+    }
+}
+
+struct Course {
+    var id = ""
+    var professor = ""
+    var time = NSDateInterval()
+    var description = ""
+}
+
+enum School {
+    case seas, columbiaCollege, barnard, generalStudies, gsapp, schoolOfArts, gsas, business, colOfPhysAndSurg, law, uts
+    case dentalMed, sipa, journalism, profStudies, pubHealth, socialWork, nursing, teachersCollege, jewishTS, other, none
+}
+
+//GSAS (logo)
+//barnard
+//business
+//colOfPhysAndSurg
+//columbiaCollege
+//SEAS
+//GS
+//jts
+
+
+

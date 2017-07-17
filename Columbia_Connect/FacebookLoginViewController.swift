@@ -139,26 +139,3 @@ class FacebookLoginViewController: UIViewController {
     
 }
 
-
-struct Course {
-    var id = ""
-    var professor = ""
-    var time = NSDateInterval()
-    var description = ""
-}
-
-enum School {
-    case seas, columbiaCollege, barnard, generalStudies, gsapp, schoolOfArts, gsas, business, colOfPhysAndSurg
-    case dentalMed, sipa, journalism, profStudies, pubHealth, socialWork, teachersCollege, jewishTS, other, none
-}
-
-//GSAS (logo)
-//barnard
-//business
-//colOfPhysAndSurg
-//columbiaCollege
-//SEAS
-//GS
-//jts
-
-

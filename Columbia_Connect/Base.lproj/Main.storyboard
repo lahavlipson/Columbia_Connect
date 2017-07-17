@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dj2-Bk-lO1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2sT-Yn-Q7f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -530,13 +530,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGN-lI-IeJ">
-                                <rect key="frame" x="0.0" y="261" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="225.5" width="375" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="Zs1-Qo-uFL"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which kind of student are you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycq-TW-OL8">
-                                <rect key="frame" x="0.0" y="160" width="375" height="51"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which school do you belong to?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycq-TW-OL8">
+                                <rect key="frame" x="0.0" y="129" width="375" height="51"/>
                                 <color key="backgroundColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="Z2b-FA-EtQ"/>
@@ -557,7 +557,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBM-Pk-gxS">
-                                <rect key="frame" x="67" y="527" width="240" height="48"/>
+                                <rect key="frame" x="67" y="579" width="240" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rBM-Pk-gxS" secondAttribute="height" multiplier="5:1" id="4Xm-3I-TDy"/>
                                     <constraint firstAttribute="width" constant="240" id="Om6-AI-UJv"/>
@@ -567,16 +567,26 @@
                                     <segue destination="49e-Tb-3d3" kind="show" id="B7M-Cj-OfP"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9LD-ac-UwI" customClass="BetterSegmentedControl" customModule="Columbia_Connect" customModuleProvider="target">
+                                <rect key="frame" x="30" y="449" width="315" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mvu-2L-yvx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="T2b-dL-cDW" firstAttribute="centerX" secondItem="3rl-If-9cf" secondAttribute="centerX" id="0Sl-P4-w29"/>
+                            <constraint firstItem="hGN-lI-IeJ" firstAttribute="centerY" secondItem="T2b-dL-cDW" secondAttribute="centerY" id="42c-WJ-YHr"/>
                             <constraint firstItem="T2b-dL-cDW" firstAttribute="width" secondItem="3rl-If-9cf" secondAttribute="width" id="D5d-b3-iqZ"/>
                             <constraint firstItem="T2b-dL-cDW" firstAttribute="leading" secondItem="fQF-B2-PCi" secondAttribute="leading" constant="-20" id="FEX-VC-PCC"/>
-                            <constraint firstItem="rBM-Pk-gxS" firstAttribute="top" secondItem="hGN-lI-IeJ" secondAttribute="bottom" constant="50" id="KzV-Me-dJ9"/>
+                            <constraint firstItem="9LD-ac-UwI" firstAttribute="top" secondItem="hGN-lI-IeJ" secondAttribute="bottom" constant="7.5" id="Grg-fF-EmC"/>
+                            <constraint firstItem="9LD-ac-UwI" firstAttribute="trailing" secondItem="T2b-dL-cDW" secondAttribute="trailing" constant="-30" id="LbQ-lr-0GC"/>
                             <constraint firstItem="hGN-lI-IeJ" firstAttribute="width" secondItem="T2b-dL-cDW" secondAttribute="width" id="RRu-dR-NiZ"/>
-                            <constraint firstItem="hGN-lI-IeJ" firstAttribute="top" secondItem="Ycq-TW-OL8" secondAttribute="bottom" constant="50" id="bnj-vt-0px"/>
+                            <constraint firstItem="T2b-dL-cDW" firstAttribute="top" secondItem="Ycq-TW-OL8" secondAttribute="bottom" constant="-180" id="gwy-fT-OtE"/>
+                            <constraint firstItem="9LD-ac-UwI" firstAttribute="centerX" secondItem="T2b-dL-cDW" secondAttribute="centerX" id="h3F-lV-8yD"/>
                             <constraint firstItem="T2b-dL-cDW" firstAttribute="top" secondItem="fQF-B2-PCi" secondAttribute="top" constant="-30" id="l21-X9-qcD"/>
-                            <constraint firstItem="rBM-Pk-gxS" firstAttribute="top" secondItem="T2b-dL-cDW" secondAttribute="bottom" constant="-140" id="o2q-Dg-syy"/>
+                            <constraint firstItem="rBM-Pk-gxS" firstAttribute="bottom" secondItem="T2b-dL-cDW" secondAttribute="bottom" constant="-40" id="o2q-Dg-syy"/>
                             <constraint firstItem="T2b-dL-cDW" firstAttribute="centerY" secondItem="3rl-If-9cf" secondAttribute="centerY" id="pdI-MS-LIn"/>
                             <constraint firstItem="T2b-dL-cDW" firstAttribute="height" secondItem="3rl-If-9cf" secondAttribute="height" id="qPF-gv-4Dy"/>
                             <constraint firstItem="Ycq-TW-OL8" firstAttribute="width" secondItem="T2b-dL-cDW" secondAttribute="width" id="qTp-VY-AD1"/>
@@ -586,12 +596,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="graduateSwitch" destination="9LD-ac-UwI" id="Q8w-vQ-Fzv"/>
                         <outlet property="typePickerView" destination="hGN-lI-IeJ" id="i1t-ai-fWy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vto-zH-R9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354" y="-1150"/>
+            <point key="canvasLocation" x="-354.39999999999998" y="-1150.0749625187407"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
