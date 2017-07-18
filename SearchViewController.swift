@@ -9,10 +9,6 @@
 import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDelegate, UITableViewDelegate, UITableViewDataSource {
-    
-    var profilePicPath = UIBezierPath(svgPath: "M83.9372351,92.7269901 C96.028676,83.2253729 103.795088,68.4684299 103.795088,51.897544 C103.795088,23.2353219 80.5597662,0 51.897544,0 C23.2353219,0 0,23.2353219 0,51.897544 C0,80.5597662 23.2353219,103.795088 51.897544,103.795088 C57.1941788,103.795088 62.3054894,103.001621 67.119094,101.527068 C66.5565735,100.313644 66.2426268,98.9615201 66.2426268,97.5360704 C66.2426268,92.2893653 70.4959217,88.0360704 75.7426268,88.0360704 C79.234525,88.0360704 82.2863971,89.9200463 83.9372351,92.7269901 Z")
-    
-    var mainCardPath = UIBezierPath(svgPath: "M62.8822483,67 L279,67 C281.761424,67 284,64.7614237 284,62 L284,10 C284,7.23857625 281.761424,5 279,5 L279,5 L61.458244,5 C69.7624511,12.3294445 75,23.0530747 75,35 C75,46.2725508 70.3370561,56.4560126 62.8347955,63.7267582 C62.9432575,64.3012371 63,64.8939921 63,65.5 C63,66.0104015 62.9597491,66.5114018 62.8822483,67 Z")
 
     @IBOutlet weak var toolBar: UIToolbar!
     
@@ -37,7 +33,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
-
     }
     
     func position(for bar: UIBarPositioning) -> UIBarPosition {
@@ -104,27 +99,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         nameLabel.text = "Lahav Lipson"
         mainCardView.addSubview(nameLabel)
         
-            
-            
-            
         view.addSubview(mainCardView)
-        
-        
-        
-
-        
-//        let profileImageViewC1 = NSLayoutConstraint(item: profileImageView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 80)
-//        let profileImageViewC2 = NSLayoutConstraint(item: profileImageView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: profileImageView, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
-//        let profileImageViewC3 = NSLayoutConstraint(item: profileImageView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 20)
-//        let profileImageViewC4 = NSLayoutConstraint(item: profileImageView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 20)
-//        view.addConstraints([profileImageViewC1,profileImageViewC2,profileImageViewC3,profileImageViewC4])
-        
-        
-        
-        
-        
-        
-        
         
         userCell.backgroundView = view
         return userCell

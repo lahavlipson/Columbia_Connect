@@ -13,5 +13,6 @@ target 'Columbia_Connect' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'GMStepper'
+  pod 'RSKImageCropper'
 
 end

@@ -132,8 +132,8 @@ class FacebookLoginViewController: UIViewController {
         if let destinationVC = segue.destination as? VerifyViewController {
             destinationVC.userProfile = self.userProfile
         } else {
-            let destinationVC = segue.destination as! StudentTypeViewController
-            destinationVC.userProfile = self.userProfile
+//            let destinationVC = segue.destination as! StudentTypeViewController
+//            destinationVC.userProfile = self.userProfile
         }
     }
     

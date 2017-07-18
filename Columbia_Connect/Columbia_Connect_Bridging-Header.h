@@ -10,5 +10,6 @@
 #define Columbia_Connect_Bridging_Header_h
 
 #import <iCarousel/iCarousel.h>
+#import <RSKImageCropper/RSKImageCropper.h>
 
 #endif /* Columbia_Connect_Bridging_Header_h */

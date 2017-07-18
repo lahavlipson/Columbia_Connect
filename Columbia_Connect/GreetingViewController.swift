@@ -132,7 +132,7 @@ struct Profile {
     var uni = ""
     var facebookID = ""
     var gender: String?
-    var birthday = NSDate()
+    var birthday = Date()
     var profilePic: UIImage?
     var school = School.none
     var graduatingClass: Int?

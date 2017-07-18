@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dj2-Bk-lO1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ov-WQ-tKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5343" y="-1200"/>
+            <point key="canvasLocation" x="-7849" y="-1188"/>
         </scene>
         <!--Facebook Login View Controller-->
         <scene sceneID="oK0-rW-kvH">
@@ -268,12 +268,12 @@
                         <outlet property="fbLoginButton" destination="mjG-4n-cPY" id="o9B-Vd-BpG"/>
                         <outlet property="messageLabel" destination="BIl-up-bSs" id="ng7-lt-jdH"/>
                         <segue destination="Wzw-L2-qOw" kind="show" identifier="toVerifySegue" id="Njg-ku-fP9"/>
-                        <segue destination="2sT-Yn-Q7f" kind="show" identifier="signedInSegue" id="jns-JB-tv1"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="signedInSegue" id="oIq-JA-pcr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M93-Pg-dyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4506" y="-1200"/>
+            <point key="canvasLocation" x="-7012" y="-1188"/>
         </scene>
         <!--Verify View Controller-->
         <scene sceneID="zie-Xk-95o">
@@ -359,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgv-kz-L7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3663" y="-975"/>
+            <point key="canvasLocation" x="-6169" y="-963"/>
         </scene>
         <!--Recommendations-->
         <scene sceneID="m2e-XS-vqX">
@@ -604,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vto-zH-R9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2863" y="-1191"/>
+            <point key="canvasLocation" x="-5369" y="-1179"/>
         </scene>
         <!--Grad Class View Controller-->
         <scene sceneID="Mok-NB-gCD">
@@ -694,7 +694,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2b-Mp-CxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1990" y="-1019"/>
+            <point key="canvasLocation" x="-4466" y="-1006"/>
         </scene>
         <!--Choose Courses View Controller-->
         <scene sceneID="OaG-mw-34j">
@@ -752,7 +752,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PmT-eb-ACM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1100" y="-1200"/>
+            <point key="canvasLocation" x="-3553" y="-1190"/>
         </scene>
         <!--Profile Picture View Controller-->
         <scene sceneID="7Lg-LY-g4n">
@@ -830,12 +830,96 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="vAQ-92-Rac" id="Soz-33-O9J"/>
                         <outlet property="photoButton" destination="Iav-wt-Nc5" id="c1d-jA-5yT"/>
+                        <segue destination="wuD-8G-4uq" kind="show" identifier="toDateChooser" id="xKQ-XY-1QQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7Z-dB-auF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-167.19999999999999" y="-1192.3538230884558"/>
+            <point key="canvasLocation" x="-2668" y="-1191"/>
+        </scene>
+        <!--Birthday View Controller-->
+        <scene sceneID="Gjn-ak-1yz">
+            <objects>
+                <viewController id="wuD-8G-4uq" customClass="BirthdayViewController" customModule="Columbia_Connect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Zb-y8-CDx"/>
+                        <viewControllerLayoutGuide type="bottom" id="eeB-3k-Oia"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mL6-nK-INf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cu_background" translatesAutoresizingMaskIntoConstraints="NO" id="hcV-Ye-5Nu">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                            </imageView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fot-eV-oGj">
+                                <rect key="frame" x="-1" y="225" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="522085797.00228798">
+                                    <!--2017-07-18 15:49:57 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_US"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2F-yD-th5">
+                                <rect key="frame" x="67" y="538.5" width="240" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="q2F-yD-th5" secondAttribute="height" multiplier="5:1" id="CtZ-I3-iiw"/>
+                                    <constraint firstAttribute="width" constant="240" id="cfj-Ve-81b"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="next button"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="wuD-8G-4uq" eventType="touchUpInside" id="AVq-lI-dW8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="432-OS-hip">
+                                <rect key="frame" x="19.5" y="29.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8Pe-vE-xqB"/>
+                                    <constraint firstAttribute="width" constant="40" id="jOe-5K-JFK"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back_arrow"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="wuD-8G-4uq" eventType="touchUpInside" id="EFj-Zr-QT3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When were you born?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2L-cB-6jb">
+                                <rect key="frame" x="-0.5" y="129.5" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UEb-eF-duD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hcV-Ye-5Nu" firstAttribute="height" secondItem="mL6-nK-INf" secondAttribute="height" id="5cC-y3-VU8"/>
+                            <constraint firstItem="q2F-yD-th5" firstAttribute="centerX" secondItem="hcV-Ye-5Nu" secondAttribute="centerX" id="64N-Uw-KgD"/>
+                            <constraint firstItem="fot-eV-oGj" firstAttribute="centerX" secondItem="hcV-Ye-5Nu" secondAttribute="centerX" id="87F-a7-gBe"/>
+                            <constraint firstItem="hcV-Ye-5Nu" firstAttribute="leading" secondItem="432-OS-hip" secondAttribute="leading" constant="-20" id="JQb-LW-Yph"/>
+                            <constraint firstItem="I2L-cB-6jb" firstAttribute="width" secondItem="hcV-Ye-5Nu" secondAttribute="width" id="KRm-Sz-0Xn"/>
+                            <constraint firstItem="fot-eV-oGj" firstAttribute="centerY" secondItem="hcV-Ye-5Nu" secondAttribute="centerY" id="LFO-mP-YIf"/>
+                            <constraint firstItem="fot-eV-oGj" firstAttribute="width" secondItem="hcV-Ye-5Nu" secondAttribute="width" id="OMY-Us-Uw1"/>
+                            <constraint firstItem="hcV-Ye-5Nu" firstAttribute="width" secondItem="mL6-nK-INf" secondAttribute="width" id="QvZ-jX-Orm"/>
+                            <constraint firstItem="hcV-Ye-5Nu" firstAttribute="top" secondItem="I2L-cB-6jb" secondAttribute="top" constant="-130" id="bYU-sZ-G9w"/>
+                            <constraint firstItem="hcV-Ye-5Nu" firstAttribute="centerX" secondItem="mL6-nK-INf" secondAttribute="centerX" id="jC1-0P-Dhd"/>
+                            <constraint firstItem="hcV-Ye-5Nu" firstAttribute="centerY" secondItem="mL6-nK-INf" secondAttribute="centerY" id="o2M-gi-qg6"/>
+                            <constraint firstItem="I2L-cB-6jb" firstAttribute="centerX" secondItem="hcV-Ye-5Nu" secondAttribute="centerX" id="qva-5q-QAq"/>
+                            <constraint firstItem="hcV-Ye-5Nu" firstAttribute="top" secondItem="432-OS-hip" secondAttribute="top" constant="-30" id="xqa-Nl-zEo"/>
+                            <constraint firstItem="q2F-yD-th5" firstAttribute="bottom" secondItem="hcV-Ye-5Nu" secondAttribute="bottom" constant="-80" id="ylM-o9-POS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateChooser" destination="fot-eV-oGj" id="c04-kd-Can"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="finishedSetupSegue" id="YZf-jD-ciZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Icg-2R-KbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1750" y="-1189"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -934,7 +1018,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="el5-db-CG5" id="eFL-p5-cG7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -980,7 +1064,7 @@
         <image name="uni_icon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n8H-Vf-XYl"/>
+        <segue reference="oIq-JA-pcr"/>
         <segue reference="eLw-Nd-ujl"/>
     </inferredMetricsTieBreakers>
 </document>
