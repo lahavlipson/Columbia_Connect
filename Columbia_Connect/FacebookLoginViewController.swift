@@ -66,6 +66,7 @@ class FacebookLoginViewController: UIViewController {
                             let userID = (responseDictionary["id"] as! NSString) as String
                             self.userProfile.facebookID = userID
                             let facebookProfileUrl = URL(string: "https://graph.facebook.com/\(userID)/picture?type=large")
+                            print(facebookProfileUrl)
                             let data = try? Data(contentsOf: facebookProfileUrl!)
                             self.userProfile.profilePic = UIImage(data: data!)
                             self.checkAccountStatus()
