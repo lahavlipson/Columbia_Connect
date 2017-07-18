@@ -35,6 +35,13 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
         return 15
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("View will appear!")
+        self.carousel.currentItemView?.frame.origin.y = self.startCardHeight!
+        
+    }
+    
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         let view = RecommendUserView()
         view.layer.cornerRadius = 10
@@ -65,15 +72,16 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
             if panGesture.state == UIGestureRecognizerState.began {
                 startPanLocation = panGesture.location(in: self.carousel)
                 startCardHeight = v.frame.origin.y
+                print(startCardHeight)
             } else if panGesture.state == UIGestureRecognizerState.changed && startCardHeight != nil && startPanLocation != nil {
                 currentPanLocation = panGesture.location(in: self.carousel)
                 let yPanDiff = (currentPanLocation?.y)! - (startPanLocation?.y)!
                 v.frame.origin.y = startCardHeight! + yPanDiff
-                if v.frame.origin.y > 50{
-                    performSegue(withIdentifier: "toProfile", sender: nil)
-                    UIView.animate(withDuration: 0.1, animations: { 
+                if v.frame.origin.y > 50 && self.navigationController?.topViewController is RecommendViewController{
+                    UIView.animate(withDuration: 0.2, animations: {
                         v.frame.origin.y = self.startCardHeight!
                     })
+                    performSegue(withIdentifier: "toProfile", sender: nil)
                 }
             } else if panGesture.state == .ended && startCardHeight != nil {
                 print("velocity: \(panVelocity.y)")
