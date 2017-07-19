@@ -9,19 +9,19 @@
 import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDelegate, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var toolBar: UIToolbar!
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let searchBar = UISearchBar()
         searchBar.showsCancelButton = true
         searchBar.placeholder = "Search"
         searchBar.delegate = self
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -39,6 +39,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         return UIBarPosition.topAttached
     }
     
+    // MARK: - Tableview
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 15
     }
@@ -54,11 +56,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
-        UITableViewCell {
-        let userCell = UITableViewCell()
-        let view = UIView()
-        view.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: userCell.frame.height)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let view = UITableViewCell()
+        view.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: view.frame.height)
         
         
         let profileImageView = UIImageView(frame: CGRect(x: 20, y: 10, width: 80, height: 80))
@@ -67,13 +67,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.clipsToBounds = true
-       
-        view.addSubview(profileImageView)
+        
+        
         
         let mainCardView = UIView(frame: CGRect(x: 90, y: 15.5, width: self.view.frame.width-90-30, height: 70))
-            mainCardView.alpha = 1
+        mainCardView.alpha = 1
         mainCardView.backgroundColor = UIColor(hex: 0xEFEFEF)
-        //mainCardView.layer.cornerRadius = 15
         let path = UIBezierPath()
         let cornerRadius: CGFloat = 15
         let frame = mainCardView.frame
@@ -86,14 +85,40 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         path.addLine(to: CGPoint(x: frame.width-cornerRadius, y: frame.height))
         path.addArc(withCenter: CGPoint(x: frame.width-cornerRadius, y: frame.height-cornerRadius), radius: cornerRadius, startAngle: CGFloat.pi/2, endAngle: 0, clockwise: false)
         path.addLine(to: CGPoint(x: frame.width, y: cornerRadius))
-         path.addArc(withCenter: CGPoint(x: frame.width-cornerRadius, y: cornerRadius), radius: cornerRadius, startAngle: 0, endAngle: -CGFloat.pi/2, clockwise: false)
+        path.addArc(withCenter: CGPoint(x: frame.width-cornerRadius, y: cornerRadius), radius: cornerRadius, startAngle: 0, endAngle: -CGFloat.pi/2, clockwise: false)
         path.close()
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         mainCardView.layer.mask = mask
         mask.strokeColor = UIColor.black.cgColor
         mask.lineWidth = 1.0
-            
+        
+        var translation = CGAffineTransform(translationX: 90, y: 15.5);
+        let cardShadowPath = path.cgPath.copy(using: &translation);
+        //let shadowPath = path
+        
+        
+        let cardShadowView = UIView()
+        cardShadowView.layer.shadowColor = UIColor.black.cgColor
+        cardShadowView.layer.shadowOpacity = 0.5
+        cardShadowView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        cardShadowView.layer.shadowRadius = 2
+        cardShadowView.layer.shadowPath = cardShadowPath
+        view.addSubview(cardShadowView)
+        
+        
+        let picShadowPath = UIBezierPath(arcCenter: CGPoint(x: 60, y: 50), radius: 40, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true).cgPath
+        let picShadowView = UIView()
+        picShadowView.layer.shadowColor = UIColor.black.cgColor
+        picShadowView.layer.shadowOpacity = 0.5
+        picShadowView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        picShadowView.layer.shadowRadius = 2
+        picShadowView.layer.shadowPath = picShadowPath
+        view.addSubview(picShadowView)
+        
+        
+        view.addSubview(profileImageView)
+        
         let nameLabel = UILabel(frame: CGRect(x: 30, y: 0, width: frame.width-40, height: 40))
         nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 22)
         nameLabel.text = "Lahav Lipson"
@@ -101,32 +126,27 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         
         view.addSubview(mainCardView)
         
-        userCell.backgroundView = view
-        return userCell
+        return view
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func dtr(d: CGFloat) -> CGFloat {
-        return CGFloat(Double(d)*Double.pi/180)
-    }
     
-
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

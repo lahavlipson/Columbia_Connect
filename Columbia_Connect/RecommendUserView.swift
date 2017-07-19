@@ -91,16 +91,16 @@ class RecommendUserView: UIView {
         let studyingLabelC2 = NSLayoutConstraint(item: studyingLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: profileImageView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 15)
         self.addConstraints([studyingLabelC1,studyingLabelC2])
         
-        let schoolIconC1 = NSLayoutConstraint(item: schoolIcon, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 40)
-        let schoolIconC2 = NSLayoutConstraint(item: schoolIcon, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: schoolIcon, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
-        let schoolIconC3 = NSLayoutConstraint(item: schoolIcon, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 10)
-        let schoolIconC4 = NSLayoutConstraint(item: schoolIcon, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: profileImageView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-        self.addConstraints([schoolIconC1,schoolIconC2,schoolIconC3,schoolIconC4])
-        
         let nameLabelC1 = NSLayoutConstraint(item: nameLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: profileImageView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 20)
         let nameLabelC2 = NSLayoutConstraint(item: nameLabel, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: -10)
         let nameLabelC3 = NSLayoutConstraint(item: nameLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: schoolIcon, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
         self.addConstraints([nameLabelC1,nameLabelC2,nameLabelC3])
+        
+        let schoolIconC1 = NSLayoutConstraint(item: schoolIcon, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 40)
+        let schoolIconC2 = NSLayoutConstraint(item: schoolIcon, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: schoolIcon, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
+        let schoolIconC3 = NSLayoutConstraint(item: schoolIcon, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 10)
+        let schoolIconC4 = NSLayoutConstraint(item: schoolIcon, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: nameLabel, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        self.addConstraints([schoolIconC1,schoolIconC2,schoolIconC3,schoolIconC4])
         
         let mutualFriendsC1 = NSLayoutConstraint(item: mutualFriends, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         let mutualFriendsC2 = NSLayoutConstraint(item: mutualFriends, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: studyingLabel, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 30)
