@@ -38,7 +38,9 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("View will appear!")
-        self.carousel.currentItemView?.frame.origin.y = self.startCardHeight!
+        if startCardHeight != nil {
+            self.carousel.currentItemView?.frame.origin.y = self.startCardHeight!
+        }
         
     }
     

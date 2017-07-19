@@ -37,9 +37,22 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
     }
+
+    // MARK: - Searchbar
     
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return UIBarPosition.topAttached
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("Cancel button Clicked")
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        tableView.reloadData()
+        searchBar.resignFirstResponder()
+        print("SearchButtonClicked: " + searchBar.text!)
     }
     
     // MARK: - Tableview

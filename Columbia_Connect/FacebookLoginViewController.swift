@@ -17,6 +17,8 @@ class FacebookLoginViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBAction func fbLoginButtonPressed(_ sender: Any) {
         
         loginButtonClicked()
@@ -32,23 +34,33 @@ class FacebookLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         messageLabel.text = ""
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = true
     }
     
     func loginButtonClicked() {
         messageLabel.text = ""
+        print("#-2")
         let loginManager = LoginManager()
+        print("#-1")
         loginManager.logOut()
+        print("#0")
         loginManager.logIn([.publicProfile, .userFriends], viewController: self) { loginResult in
+            print("#1")
+            self.activityIndicator.isHidden = false
             switch loginResult {
             case .failed(let error):
                 self.messageLabel.text = "There is an error: \(error)"
                 print(error)
+                self.activityIndicator.isHidden = true
             case .cancelled:
                 print("User cancelled login.")
+                self.activityIndicator.isHidden = true
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                print("#2")
                 print("Facebook logged in!")
                 //print(accessToken.userId)
-                //print(AccessToken.current?.userId)
+                print(AccessToken.current?.userId)
                 
                 let params = ["fields" : "name, id, gender"]
                 let graphRequest = GraphRequest(graphPath: "me", parameters: params)
@@ -57,6 +69,7 @@ class FacebookLoginViewController: UIViewController {
                     switch requestResult {
                     case .failed(let error):
                         print("error in graph request:", error)
+                        self.activityIndicator.isHidden = true
                         break
                     case .success(let graphResponse):
                         if let responseDictionary = graphResponse.dictionaryValue {
@@ -92,12 +105,15 @@ class FacebookLoginViewController: UIViewController {
                                     switch errCode {
                                     case .wrongPassword:
                                         self.messageLabel.text = "The uni \(self.userProfile.uni) has already been tied to a different facebook account."
+                                        self.activityIndicator.isHidden = true
                                     default:
                                         print("Sign In User Error: \(error!)")
+                                        self.activityIndicator.isHidden = true
                                     }
                                 }
                             } else {
                                 print("User Succesfully signed in!")
+                                self.activityIndicator.isHidden = true
                                 self.performSegue(withIdentifier: "signedInSegue", sender: nil)
                             }
                         }
@@ -105,6 +121,7 @@ class FacebookLoginViewController: UIViewController {
                         
                     default:
                         print("Create User Error: \(error!)")
+                        self.activityIndicator.isHidden = true
                     }
                 }
             } else {

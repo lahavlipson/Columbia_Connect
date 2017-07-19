@@ -59,7 +59,6 @@ class RecommendUserView: UIView {
         let studyingLabel = UILabel()
         studyingLabel.numberOfLines = 3
         studyingLabel.textAlignment = .center
-        //studyingLabel.backgroundColor = .green
         studyingLabel.text = "Studying\n Computer Science"
         studyingLabel.font = UIFont(name: "HelveticaNeue-Light", size: 24)
         studyingLabel.addTextSpacing(val: 3)
@@ -78,6 +77,13 @@ class RecommendUserView: UIView {
         mutualFriends.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(mutualFriends)
         
+        let classLabel = UILabel()
+        classLabel.numberOfLines = 2
+        classLabel.textAlignment = .center
+        classLabel.text = "Class of \n2019"
+        classLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
+        classLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(classLabel)
         
         // CONSTRAINTS
         
@@ -101,6 +107,12 @@ class RecommendUserView: UIView {
         let schoolIconC3 = NSLayoutConstraint(item: schoolIcon, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 10)
         let schoolIconC4 = NSLayoutConstraint(item: schoolIcon, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: nameLabel, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
         self.addConstraints([schoolIconC1,schoolIconC2,schoolIconC3,schoolIconC4])
+        
+        let classLabelC1 = NSLayoutConstraint(item: classLabel, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: -10)
+        let classLabelC2 = NSLayoutConstraint(item: classLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+        let classLabelC3 = NSLayoutConstraint(item: classLabel, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: schoolIcon, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 10)
+        let classLabelC4 = NSLayoutConstraint(item: classLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: schoolIcon, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
+        self.addConstraints([classLabelC1,classLabelC2,classLabelC3,classLabelC4])
         
         let mutualFriendsC1 = NSLayoutConstraint(item: mutualFriends, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         let mutualFriendsC2 = NSLayoutConstraint(item: mutualFriends, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: studyingLabel, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 30)
