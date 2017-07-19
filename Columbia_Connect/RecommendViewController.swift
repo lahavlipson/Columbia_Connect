@@ -47,7 +47,7 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
         view.layer.cornerRadius = 10
         view.frame.size = CGSize(width: self.view.frame.width-30, height: self.view.frame.height-200)
         let panGestureRecognizer = MyPanRecognizer(target: self, action:#selector(self.handlePan(panGesture:)))
-        panGestureRecognizer.onsetView = view
+        panGestureRecognizer.gestureData = view
         panGestureRecognizer.delegate = self
         view.addGestureRecognizer(panGestureRecognizer)
         
@@ -64,7 +64,7 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
     }
     
     func handlePan(panGesture: MyPanRecognizer) {
-        let v = panGesture.onsetView!
+        let v = panGesture.gestureData! as! UIView
         let panVelocity = panGesture.velocity(in: carousel)
         let currentIndex = carousel.index(ofItemView: v)
         if currentIndex == carousel.currentItemIndex {
@@ -110,7 +110,7 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         let recognizer = gestureRecognizer as! MyPanRecognizer
-        let translation = recognizer.translation(in: recognizer.onsetView)
+        let translation = recognizer.translation(in: recognizer.gestureData as! UIView)
         return fabs(translation.y) > fabs(translation.x)
     }
     
@@ -139,7 +139,9 @@ class RecommendViewController: UIViewController, iCarouselDataSource, iCarouselD
 }
 
 class MyPanRecognizer: UIPanGestureRecognizer {
-    var onsetView: UIView?
+    var gestureData: Any?
 }
-
+class MyPressRecognizer: UILongPressGestureRecognizer {
+    var gestureData: Any?
+}
 

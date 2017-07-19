@@ -8,11 +8,13 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDelegate, UITableViewDelegate, UITableViewDataSource {
+class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDelegate, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var toolBar: UIToolbar!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var shouldLoadProfile = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsSelection = false
         
         searchBar.searchBarStyle = .minimal
         
@@ -49,14 +52,38 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         return 1
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        //vc.fmRecordId = item["inContainerRecordId"]! //this is the data which will be passed to the new vc
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+    func handlePress(pressGesture: MyPanRecognizer) {
+        let data = pressGesture.gestureData as! [String:Any]
+        let shadowView1 = data["shadow1"] as! UIView
+        let shadowView2 = data["shadow2"] as! UIView
+        if pressGesture.state == .began {
+            shouldLoadProfile = true
+            shadowView1.alpha = 0
+            shadowView2.alpha = 0
+        }
+        if pressGesture.state == .ended {
+            shadowView1.alpha = 1
+            shadowView2.alpha = 1
+            if shouldLoadProfile {
+                shouldLoadProfile = false
+                let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        shouldLoadProfile = false
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let uniToUse = ""//Will fill in later
+        
         let view = UITableViewCell()
         view.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: view.frame.height)
         
@@ -67,8 +94,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.clipsToBounds = true
-        
-        
         
         let mainCardView = UIView(frame: CGRect(x: 90, y: 15.5, width: self.view.frame.width-90-30, height: 70))
         mainCardView.alpha = 1
@@ -94,9 +119,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         mask.lineWidth = 1.0
         
         var translation = CGAffineTransform(translationX: 90, y: 15.5);
-        let cardShadowPath = path.cgPath.copy(using: &translation);
-        //let shadowPath = path
-        
+        let cardShadowPath = path.cgPath.copy(using: &translation);        
         
         let cardShadowView = UIView()
         cardShadowView.layer.shadowColor = UIColor.black.cgColor
@@ -125,6 +148,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UIToolbarDele
         mainCardView.addSubview(nameLabel)
         
         view.addSubview(mainCardView)
+        
+        let pressRecognizer = MyPressRecognizer(target: self, action:#selector(self.handlePress(pressGesture:)))
+        pressRecognizer.gestureData = ["uni":uniToUse, "shadow1":cardShadowView, "shadow2":picShadowView]
+        pressRecognizer.minimumPressDuration = 0.0
+        pressRecognizer.delegate = self
+        view.addGestureRecognizer(pressRecognizer)
         
         return view
     }
