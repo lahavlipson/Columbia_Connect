@@ -33,6 +33,7 @@
 		CDB361DA1F09CA1100E43351 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361D91F09CA1100E43351 /* GreetingViewController.swift */; };
 		CDB361DE1F0AA68C00E43351 /* StudentTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */; };
 		CDB361E31F0D4DC200E43351 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB361E21F0D4DC200E43351 /* RecommendViewController.swift */; };
+		CDB409B21F205851005B7830 /* StudyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB409B11F205851005B7830 /* StudyingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTypeViewController.swift; sourceTree = "<group>"; };
 		CDB361E11F0D498A00E43351 /* Columbia_Connect_Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Columbia_Connect_Bridging-Header.h"; sourceTree = "<group>"; };
 		CDB361E21F0D4DC200E43351 /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		CDB409B11F205851005B7830 /* StudyingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				CDB361D91F09CA1100E43351 /* GreetingViewController.swift */,
 				CD228E741F17D405009C7C6E /* FacebookLoginViewController.swift */,
 				CD228E761F181568009C7C6E /* VerifyViewController.swift */,
+				CDB409B11F205851005B7830 /* StudyingViewController.swift */,
 				CDB361DD1F0AA68C00E43351 /* StudentTypeViewController.swift */,
 				CD4D45A31F1C3F960042F25E /* GradClassViewController.swift */,
 				CD4D45A51F1D30B60042F25E /* ChooseCoursesViewController.swift */,
@@ -434,6 +437,7 @@
 				CDB361DA1F09CA1100E43351 /* GreetingViewController.swift in Sources */,
 				CD4D45A41F1C3F960042F25E /* GradClassViewController.swift in Sources */,
 				CD228E771F181568009C7C6E /* VerifyViewController.swift in Sources */,
+				CDB409B21F205851005B7830 /* StudyingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

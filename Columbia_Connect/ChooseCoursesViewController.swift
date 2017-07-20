@@ -37,6 +37,7 @@ class ChooseCoursesViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.userProfile.writeData()
         let destinationVC = segue.destination as! ProfilePictureViewController
         destinationVC.userProfile = self.userProfile
     }

@@ -67,6 +67,8 @@ class VerifyViewController: UIViewController {
                     print("Sign In User Error: \(error!)")
                 } else {
                     if (Auth.auth().currentUser?.isEmailVerified)! {
+                        self.userProfile.verified = true
+                        self.userProfile.writeData()
                         self.continueButton.isEnabled = true
                         self.verifiedLabel.text = "Verified"
                         self.verifiedLabel.textColor = UIColor(hex: 0x31FF54)
@@ -90,14 +92,14 @@ class VerifyViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destinationVC = segue.destination as! StudentTypeViewController
+        destinationVC.userProfile = self.userProfile
     }
-    */
+ 
 
 }

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
+var ref: DatabaseReference! = Database.database().reference()
 
 class GreetingViewController: UIViewController, UITextFieldDelegate {
     
@@ -128,6 +131,7 @@ extension UITextField {
 }
 
 struct Profile {
+    
     var name = ""
     var uni = ""
     var facebookID = ""
@@ -138,10 +142,22 @@ struct Profile {
     var graduatingClass: Int?
     var studying = ""
     var courses: [Course] = []
-}
-
-enum StudentType {
-    case undergrad, graduate, phd, other, none
+    var verified = false
+    
+    func toDict() -> [String:String] {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy"
+        var dict = ["name":name,"FBID":facebookID,"birthday":dateFormatter.string(from: birthday), "gradClass":String(describing: graduatingClass), "School": String(describing: school),
+                    "studying":studying, "verified":String(verified)]
+        if gender != nil { dict["gender"] = String(describing: gender!) } else { dict["gender"] = "nil" }
+        if graduatingClass != nil { dict["gradClass"] = String(describing: graduatingClass!) } else { dict["gradClass"] = "nil"}
+        print(dict)
+        return dict
+    }
+    
+    func writeData(){
+        ref.child("Users").child(self.uni).setValue(self.toDict())
+    }
 }
 
 

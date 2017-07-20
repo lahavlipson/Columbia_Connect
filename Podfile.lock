@@ -30,6 +30,9 @@ PODS:
   - Firebase/Core (4.0.4):
     - FirebaseAnalytics (= 4.0.2)
     - FirebaseCore (= 4.0.4)
+  - Firebase/Database (4.0.4):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.0.0)
   - FirebaseAnalytics (4.0.2):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
@@ -41,6 +44,8 @@ PODS:
   - FirebaseCore (4.0.4):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
+  - FirebaseDatabase (4.0.0):
+    - FirebaseAnalytics (~> 4.0)
   - FirebaseInstanceID (2.0.0):
     - FirebaseCore (~> 4.0)
   - GMStepper (2.0.0)
@@ -69,6 +74,7 @@ DEPENDENCIES:
   - FacebookShare (from `https://github.com/1amageek/facebook-sdk-swift`)
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Database
   - GMStepper
   - iCarousel
   - RSKImageCropper
@@ -94,6 +100,7 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
   FirebaseCore: cfc042628ef9f20debe09c0eb683135fcd404cb4
+  FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GMStepper: 6aff0c881afac2f432e5c9b0df71e44e14110a06
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
@@ -102,6 +109,6 @@ SPEC CHECKSUMS:
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
   RSKImageCropper: 356e36fc58c57c371b5d8b23d603936d6a73df6c
 
-PODFILE CHECKSUM: 74a59a6871dbfdab76f4ffddba511eb4c4052bbc
+PODFILE CHECKSUM: 249370b3eb252f52fe0d4b584ae3cfc958fb817a
 
 COCOAPODS: 1.2.1

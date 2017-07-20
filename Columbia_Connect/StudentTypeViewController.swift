@@ -160,6 +160,7 @@ class StudentTypeViewController: UIViewController, UIPickerViewDataSource, UIPic
             school = .uts
         default: break
         }
+        self.userProfile.school = self.school
     }
     
      func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
@@ -195,6 +196,8 @@ class StudentTypeViewController: UIViewController, UIPickerViewDataSource, UIPic
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.userProfile.graduatingClass = nil
+        print(self.userProfile.uni)
+        self.userProfile.writeData()
         if let destinationVC = segue.destination as? GradClassViewController {
             destinationVC.userProfile = self.userProfile
         } else {

@@ -23,13 +23,17 @@ class BirthdayViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        dateChooser.minimumDate = Date(timeIntervalSince1970: TimeInterval(-2208970800000))
+        
+        super.viewDidLoad();
+        let formatter = DateFormatter();
+        formatter.dateFormat = "yyyy-MM-dd"
+        let minDate = formatter.date(from: "1900/1/1")
+        dateChooser.minimumDate = minDate
         dateChooser.maximumDate = Date()
-        dateChooser.setDate(Date.init(timeIntervalSince1970: 946702800000), animated: false)
+        let setDate = formatter.date(from: "2000/1/1")
+        dateChooser.setDate(setDate!, animated: false)
         dateChooser.addTarget(self, action: #selector(self.handleDatePicker), for: UIControlEvents.valueChanged)
-
+        dateChooser.setValue(UIColor.white, forKeyPath: "textColor")
         
     }
     
@@ -43,14 +47,13 @@ class BirthdayViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        self.userProfile.writeData()
     }
-    */
+ 
 
 }

@@ -14,15 +14,16 @@ import Firebase
 class FacebookLoginViewController: UIViewController {
     
     var userProfile = Profile()
-    
+        
     @IBOutlet weak var messageLabel: UILabel!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBAction func fbLoginButtonPressed(_ sender: Any) {
         
-        loginButtonClicked()
-        print()
+        //loginButtonClicked()
+        self.userProfile.facebookID = "password"
+        checkAccountStatus()
     }
     
     @IBOutlet weak var fbLoginButton: UIButton!
@@ -126,7 +127,9 @@ class FacebookLoginViewController: UIViewController {
                 }
             } else {
                 print("Successfuly created user!")
-                self.performSegue(withIdentifier: "toVerifySegue", sender: nil)
+                self.userProfile.writeData()
+                //self.performSegue(withIdentifier: "toVerifySegue", sender: nil) WILL UNCOMMENT LATER
+                self.performSegue(withIdentifier: "skipVerification", sender: nil)
             }
         }
     }
@@ -148,9 +151,8 @@ class FacebookLoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? VerifyViewController {
             destinationVC.userProfile = self.userProfile
-        } else {
-//            let destinationVC = segue.destination as! StudentTypeViewController
-//            destinationVC.userProfile = self.userProfile
+        } else if let destinationVC = segue.destination as? StudentTypeViewController {
+            destinationVC.userProfile = self.userProfile
         }
     }
     
