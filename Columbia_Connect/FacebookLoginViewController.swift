@@ -151,7 +151,7 @@ class FacebookLoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? VerifyViewController {
             destinationVC.userProfile = self.userProfile
-        } else if let destinationVC = segue.destination as? StudentTypeViewController {
+        } else if let destinationVC = segue.destination as? StudyingViewController {
             destinationVC.userProfile = self.userProfile
         }
     }

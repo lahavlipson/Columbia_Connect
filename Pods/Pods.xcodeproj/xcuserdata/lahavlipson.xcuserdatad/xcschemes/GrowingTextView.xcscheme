@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FB610E0AA94FE3A8FABE0DD681EF115D'
-               BlueprintName = 'RSKImageCropper'
+               BlueprintIdentifier = 'ACEF46F3B8A411DED7BF5C736506D068'
+               BlueprintName = 'GrowingTextView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RSKImageCropper.framework'>
+               BuildableName = 'GrowingTextView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

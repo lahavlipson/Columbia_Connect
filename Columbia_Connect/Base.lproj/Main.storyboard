@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nh3-vd-mVk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dj2-Bk-lO1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="1753" y="-321"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="359.37031484257875"/>
+            <point key="canvasLocation" x="1815" y="360"/>
         </scene>
         <!--Greeting View Controller-->
         <scene sceneID="Rsq-Mf-NVX">
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ov-WQ-tKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7849" y="-1188"/>
+            <point key="canvasLocation" x="-7849" y="-1191"/>
         </scene>
         <!--Facebook Login View Controller-->
         <scene sceneID="oK0-rW-kvH">
@@ -275,12 +275,12 @@
                         <outlet property="messageLabel" destination="BIl-up-bSs" id="ng7-lt-jdH"/>
                         <segue destination="Wzw-L2-qOw" kind="show" identifier="toVerifySegue" id="Njg-ku-fP9"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="signedInSegue" id="oIq-JA-pcr"/>
-                        <segue destination="2sT-Yn-Q7f" kind="show" identifier="skipVerification" id="Lpp-8S-rgF"/>
+                        <segue destination="nh3-vd-mVk" kind="show" identifier="skipVerification" id="dn1-LZ-VEW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M93-Pg-dyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7012" y="-1188"/>
+            <point key="canvasLocation" x="-7007" y="-1191"/>
         </scene>
         <!--Verify View Controller-->
         <scene sceneID="zie-Xk-95o">
@@ -361,7 +361,7 @@
                     <connections>
                         <outlet property="continueButton" destination="5f5-Fd-DI7" id="s1W-Xq-uEW"/>
                         <outlet property="verifiedLabel" destination="uiz-vQ-mOw" id="irw-NR-Isc"/>
-                        <segue destination="2sT-Yn-Q7f" kind="show" identifier="verifiedSegue" id="n8H-Vf-XYl"/>
+                        <segue destination="nh3-vd-mVk" kind="show" identifier="verifiedSegue" id="4gW-Kp-sqE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgv-kz-L7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -611,7 +611,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vto-zH-R9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5369" y="-1179"/>
+            <point key="canvasLocation" x="-4452" y="-1191"/>
         </scene>
         <!--Grad Class View Controller-->
         <scene sceneID="Mok-NB-gCD">
@@ -701,7 +701,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2b-Mp-CxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4466" y="-1006"/>
+            <point key="canvasLocation" x="-3644" y="-1543"/>
         </scene>
         <!--Studying View Controller-->
         <scene sceneID="C3M-4H-bTp">
@@ -725,6 +725,9 @@
                                     <constraint firstAttribute="width" secondItem="EDF-9j-ixh" secondAttribute="height" multiplier="5:1" id="rN6-WM-Sy7"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="next button"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="nh3-vd-mVk" eventType="touchUpInside" id="aVl-Yy-NWv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiR-XZ-WBt">
                                 <rect key="frame" x="19.5" y="29.5" width="40" height="40"/>
@@ -733,6 +736,9 @@
                                     <constraint firstAttribute="width" constant="40" id="iFq-tk-aSf"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="back_arrow"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="nh3-vd-mVk" eventType="touchUpInside" id="6d5-mU-rIJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are you studying?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnI-3r-m4K">
                                 <rect key="frame" x="-0.5" y="129.5" width="375" height="50"/>
@@ -744,15 +750,44 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXp-VB-Cgh" customClass="GrowingTextView" customModule="GrowingTextView">
+                                <rect key="frame" x="29.5" y="283" width="315" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Ejh-Ji-KeD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="e.g. Political Science"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxHeight">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKP-YE-mvR" userLabel="underline View">
+                                <rect key="frame" x="19.5" y="363" width="335" height="1"/>
+                                <color key="backgroundColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="eh7-7a-7TY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="OKP-YE-mvR" firstAttribute="centerX" secondItem="w1I-ug-Jtv" secondAttribute="centerX" id="0AA-no-B2n"/>
                             <constraint firstItem="EDF-9j-ixh" firstAttribute="bottom" secondItem="w1I-ug-Jtv" secondAttribute="bottom" constant="-80" id="CTs-Tj-LTr"/>
+                            <constraint firstItem="OKP-YE-mvR" firstAttribute="width" secondItem="WXp-VB-Cgh" secondAttribute="width" constant="20" id="Dk6-Bh-IB1"/>
+                            <constraint firstItem="OKP-YE-mvR" firstAttribute="centerY" secondItem="Kcg-kk-lww" secondAttribute="centerY" constant="30" id="GEo-Gp-cLm"/>
                             <constraint firstItem="w1I-ug-Jtv" firstAttribute="top" secondItem="WiR-XZ-WBt" secondAttribute="top" constant="-30" id="Gtz-d2-aTC"/>
+                            <constraint firstItem="WXp-VB-Cgh" firstAttribute="centerX" secondItem="w1I-ug-Jtv" secondAttribute="centerX" id="HYt-cM-t4d"/>
                             <constraint firstItem="w1I-ug-Jtv" firstAttribute="width" secondItem="Kcg-kk-lww" secondAttribute="width" id="Hmr-NK-ZHX"/>
                             <constraint firstItem="w1I-ug-Jtv" firstAttribute="height" secondItem="Kcg-kk-lww" secondAttribute="height" id="PVf-jS-MBA"/>
+                            <constraint firstItem="WXp-VB-Cgh" firstAttribute="trailing" secondItem="w1I-ug-Jtv" secondAttribute="trailing" constant="-30" id="Sh3-4K-uOg"/>
                             <constraint firstItem="EDF-9j-ixh" firstAttribute="centerX" secondItem="w1I-ug-Jtv" secondAttribute="centerX" id="Vzd-HA-cSr"/>
                             <constraint firstItem="w1I-ug-Jtv" firstAttribute="centerX" secondItem="Kcg-kk-lww" secondAttribute="centerX" id="Yvr-E7-DN5"/>
+                            <constraint firstItem="OKP-YE-mvR" firstAttribute="top" secondItem="WXp-VB-Cgh" secondAttribute="bottom" id="cSO-Do-oD5"/>
                             <constraint firstItem="fnI-3r-m4K" firstAttribute="centerX" secondItem="w1I-ug-Jtv" secondAttribute="centerX" id="hfE-ZX-3vw"/>
                             <constraint firstItem="w1I-ug-Jtv" firstAttribute="top" secondItem="fnI-3r-m4K" secondAttribute="top" constant="-130" id="jgZ-LQ-5Cs"/>
                             <constraint firstItem="fnI-3r-m4K" firstAttribute="width" secondItem="w1I-ug-Jtv" secondAttribute="width" id="l7P-wd-WRq"/>
@@ -760,10 +795,15 @@
                             <constraint firstItem="w1I-ug-Jtv" firstAttribute="leading" secondItem="WiR-XZ-WBt" secondAttribute="leading" constant="-20" id="yN7-td-iLy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="EDF-9j-ixh" id="ZkA-IY-cKf"/>
+                        <outlet property="textView" destination="WXp-VB-Cgh" id="lU8-vn-hZ2"/>
+                        <segue destination="2sT-Yn-Q7f" kind="show" identifier="toSchoolSegue" id="JGq-3X-SGm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aag-3F-Ueb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4327.1999999999998" y="-1826.5367316341831"/>
+            <point key="canvasLocation" x="-5306" y="-1191"/>
         </scene>
         <!--Choose Courses View Controller-->
         <scene sceneID="OaG-mw-34j">
@@ -821,7 +861,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PmT-eb-ACM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3553" y="-1190"/>
+            <point key="canvasLocation" x="-2881" y="-1189"/>
         </scene>
         <!--Profile Picture View Controller-->
         <scene sceneID="7Lg-LY-g4n">
@@ -906,7 +946,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7Z-dB-auF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2668" y="-1191"/>
+            <point key="canvasLocation" x="-2022" y="-1190"/>
         </scene>
         <!--Birthday View Controller-->
         <scene sceneID="Gjn-ak-1yz">
@@ -988,7 +1028,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Icg-2R-KbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1750" y="-1189"/>
+            <point key="canvasLocation" x="-1214" y="-1189"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1133,8 +1173,8 @@
         <image name="uni_icon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dn1-LZ-VEW"/>
         <segue reference="oIq-JA-pcr"/>
-        <segue reference="Lpp-8S-rgF"/>
-        <segue reference="yoa-rJ-hvR"/>
+        <segue reference="eLw-Nd-ujl"/>
     </inferredMetricsTieBreakers>
 </document>

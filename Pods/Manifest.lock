@@ -59,6 +59,7 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GrowingTextView (0.2.8)
   - GTMSessionFetcher/Core (1.1.11)
   - iCarousel (1.8.3)
   - nanopb (0.3.8):
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - GMStepper
+  - GrowingTextView
   - iCarousel
   - RSKImageCropper
 
@@ -104,11 +106,12 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GMStepper: 6aff0c881afac2f432e5c9b0df71e44e14110a06
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GrowingTextView: 84d1c133d67fb88d5c027a6d6510036252a9b226
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
   RSKImageCropper: 356e36fc58c57c371b5d8b23d603936d6a73df6c
 
-PODFILE CHECKSUM: 249370b3eb252f52fe0d4b584ae3cfc958fb817a
+PODFILE CHECKSUM: 05ab6e90d3a874a665a21b35a0ef39bbc36c5126
 
 COCOAPODS: 1.2.1
